@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Ecoaware Everyday Things' Site{% endblock %}
+{% block header %}Inicio{% endblock %}
+{% block content %}
+	<table border="0" width="100%">
+    	<tr >
+        	<td width="43%">
+            	<br />
+                <form id='signin_form' method='post' action=''>{% csrf_token %}
+                    <table width="100%">{{signin_form.as_table}}</table>
+                    <table width="100%">
+                    	<tr><td width="43%"></td><td><a href="{{domain}}/password_reset">¿Olvidaste tu contraseña?</a></td></tr>
+                    </table>
+                    <table width="100%">
+                    	<tr><td width="55%"></td><td><input type='submit' value='Iniciar sesión' name="signin" style='width:100px; font-weight:bold'/></td></tr>
+                    </table>
+                </form>
+            </td>
+            
+           <td width="57%">
+           
+            	<h3>Si no tienes cuenta...</h3>
+                {% if norfid %}
+                    <strong>El código RFID es incorrecto. Contacta con <a href="mailto:dcasado@deusto.es">Diego</a> o <a href="mailto:juan.lopezdearmentia@deusto.es">Juan</a> si el error persiste.</strong>
+                {% endif %}
+                <form id='signup_form' method='post' action=''>{% csrf_token %}
+                	<table>{{signup_form}}</table>
+                    Introduce tu código RFID y <input type='submit' value='regístrate' class="buttonLink" name="signup"/> ahora.
+                    <br />
+                </form>
+                <br />
+                <div align="center"><img src="{{STATIC_URL}}images/coffee.png" width="250" /></div>
+        	</td>
+        </tr>
+    </table>
+    <br />
+{% endblock %}

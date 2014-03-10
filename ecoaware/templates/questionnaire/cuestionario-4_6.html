@@ -1,0 +1,125 @@
+{% extends './questionnaire/basequestion.html' %}
+{% block title %}Ecoaware Everyday Thing's Site{% endblock %}
+{% block header %}Cuestionario{% endblock %}
+{% block javascript %}<div data-twttr-rendered="true" class="questionnaire  questionnaire-section-stuff">{% endblock %}
+{% block content %}
+     <div class="page">
+      <br />
+      <br />
+      <div class="page-content" role="main">
+        <div class="container">
+          <nav class="subject-nav">
+            <ol>
+              <li class="section-food complete"> <span class="indicator"></span><a
+                  href="">Personal</a> </li>
+              <li class="section-travel  complete"> <span class="indicator"></span><a
+                  href="">Parte 1</a></li>
+              <li class="section-home  complete"> <span class="indicator"></span><a
+                  href="">Parte 2</a> </li>
+              <li class="section-stuff  current"> <a href="1">Parte
+                  3</a> </li>
+            </ol>
+          </nav>
+          <div class="questions-pane">
+            <nav class="questions-nav">
+              <ol>
+                <li class="completed "> <span class="indicator"></span><span>Pregunta</span>
+                  1 </li>
+                <li class="completed"><span class="indicator"></span><span>pregunta</span>
+                  2</li>
+                <li class="completed"><span class="indicator"></span><span>pregunta</span>
+                  3</li>
+                <li class="completed"><span class="indicator"></span><span>pregunta</span>
+                  4</li>
+                <li class="completed"><span class="indicator"></span><span>pregunta</span>
+                  5</li>
+                <li class="completed current"><span>pregunta</span> 6</li>
+              </ol>
+              <div class="question-counter">
+                <p>Pregunta <span>6</span> de <span>6</span></p>
+              </div>
+            </nav>
+            <form action="{{domain}}/user/new/{{rfid}}/" class="answer-form question question-describe_diet" method="post" id="lastquestionform">
+              <fieldset>
+                <ul class="answers">
+                  <li>
+                    <h4> <span class="num">11. Precisamente ahora......</span>
+                    </h4>
+                    <input class="likert" id="answer_1" name="answer1" value="1"
+                      type="radio"> <label class="likert" for="answer_1">Totalmente
+                      en desacuerdo</label> <input class="likert" id="answer_2"
+                      name="answer1" value="2" type="radio"> <label class="likert"
+                      for="answer_2">En desacuerdo</label> <input class="likert"
+                      id="answer_3" name="answer1" value="3" type="radio"> <label
+                      class="likert" for="answer_3">Ni de acuerdo ni en
+                      desacuerdo</label> <input class="likert" id="answer_4" name="answer1"
+                      value="4" type="radio"> <label class="likert" for="answer_4">De
+                      acuerdo</label> <input class="likert" id="answer_5" name="answer1"
+                      value="5" type="radio"> <label class="likert" for="answer_5">Totalmente
+                      de acuerdo</label> </li>
+                  <br>
+                  <li>
+                    <h4> <span class="num">12. .....no tendría
+                        sentido para mi</span></h4>
+                    <input class="likert" id="submit1" name="answer2" value="1"
+                       type="radio"> <label class="likert" for="submit1">Totalmente
+                      en desacuerdo</label> <input class="likert" id="submit2"
+                      name="answer2" value="2"  type="radio">
+                    <label class="likert" for="submit2">En desacuerdo</label> <input
+                      class="likert" id="submit3" name="answer2" value="3" 
+                      type="radio"> <label class="likert" for="submit3">Ni de
+                      acuerdo ni en desacuerdo</label> <input class="likert" id="submit4"
+                      name="answer2" value="4" type="radio">
+                    <label class="likert" for="submit4">De acuerdo</label> <input
+                      class="likert" id="submit5" name="answer2" value="5" 
+                      type="radio"> <label class="likert" for="submit4">Totalmente
+                      de acuerdo</label> </li>
+                </ul>
+              </fieldset>
+              <nav class="nextprevious"> 
+                  <table width="100%"><tr>
+              	  <td width="60%"><a href="5" class="back-button button tertiary" rel="previous" title="Previous question">«</a> </td>
+                  <td><input value="«« Fin del Cuestionario »»" rel="next" name="commit" class="next-button button" disabled="disabled" id="endExp" type="submit"></td>
+                  </tr></table>
+                <!--<input class="next-button button"
+                  name="commit" rel="next" title="Next question" value="«« Fin del Cuestionario »»"                  type="submit">--></nav>
+            </form>
+            <div class="question-help">
+              <h7>¡¡¡CUESTIONARIO TERMINADO!!!</h7>
+              <p>Rellena los items 11 y 12, haz click en el botón <span style="font-weight: bold;">"Fin
+                  del Cuestionario"</span> y te redirigirá al último paso: la
+                página oficial de registro en el experimento. <br>
+                <br>
+                Muchas gracias por tu tiempo :) </p>
+            </div>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script>
+            $(document).ready(function() {
+                //This will check the status of radio button onload
+               $('input[name=answer2]').click(function() {
+                  //$("#test").attr('disabled',false);
+                  
+                  $("#endExp").removeAttr('disabled');
+                  //$("#butn1").attr('disabled',false);
+                });
+            });
+            </script> </div>
+        </div>
+        <!-- ./page-content --> </div>
+      <!-- ./page -->
+      <!-- Twitter script for Twitter intents & sharing -->
+      <script type="text/javascript" src="cuestionario_files/widgets.js"></script>
+    </div>
+{% endblock %}
+{% block login %}
+	<!--<br />
+	<hr />
+	<table width="100%">
+    	<tr>
+        	<td width="50%"><div align="left"><a href="{{domain}}/privatehome" class="Ta">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="{{domain}}/logout">Cerrar sesión {{user.username|upper}}</a></div></td>
+        </tr>
+    </table>-->
+{% endblock %}
+
+

@@ -1,0 +1,109 @@
+{% extends './questionnaire/basequestion.html' %}
+{% block title %}Ecoaware Everyday Thing's Site{% endblock %}
+{% block header %}Cuestionario{% endblock %}
+{% block javascript %}<div data-twttr-rendered="true" class="questionnaire  questionnaire-section-food">{% endblock %}
+{% block content %}
+    <div class="page">
+      <br />
+        <br />
+      <div class="page-content" role="main">
+        <div class="container">
+          <nav class="subject-nav">
+            <ol>
+              <li class="section-food current"> <span class="indicator"></span><a
+                  href="1" title="Comenzar el cuestionario personal desde el inicio">Personal</a>
+              </li>
+              <li class="section-travel  "> <a href="">Parte 1</a></li>
+              <li class="section-home  "> <a href="">Parte 2</a> </li>
+              <li class="section-stuff  "> <a href="">Parte 3</a> </li>
+            </ol>
+          </nav>
+          <div class="questions-pane">
+            <nav class="questions-nav">
+              <ol>
+                <li class="completed"> <span class="indicator"></span><span>Pregunta</span>
+                  1 </li>
+                <li class="completed"><span class="indicator"></span><span>pregunta</span>
+                  2</li>
+                <li class="completed"><span class="indicator"></span><span>pregunta</span>
+                  3</li>
+                <li class="completed current"><span>regunta</span> 4</li>
+              </ol>
+              <div class="question-counter">
+                <p>Pregunta <span>4</span> de <span>4</span></p>
+              </div>
+            </nav>
+            <form action="../2/1" class="answer-form question question-describe_diet" method="post">
+              <fieldset>
+                <h7> <span class="num">4. ¿Cuántos de esos cafés son con la
+                    cafetera bajo estudio?</span> </h7>
+                <!--<img alt="" class="question-image" src="/images/questions/describe_diet.png" />-->
+                <ul class="answers">
+                  <li> <input id="answer_10" name="answer" value="1" type="radio">
+                    <label for="answer_10">Uno</label> </li>
+                  <li> <input id="answer_11" name="answer" value="2" type="radio">
+                    <label for="answer_11">Dos</label> </li>
+                  <li> <input id="answer_12" name="answer" value="3" type="radio">
+                    <label for="answer_12">Tres o más</label> </li>
+                </ul>
+              </fieldset>
+              <nav class="nextprevious"> <a href="3" class="back-button button tertiary"
+                  rel="prev" title="Previous question">«</a> </nav>
+            </form>
+            <div class="question-help">
+              <h7>Información del cuestionario</h7>
+              <p>Cada vez que respondas a una pregunta, ésta se marcará con un
+                signo ✔ y pasarás automáticamente a la siguiente página.&nbsp;
+                Puedes ir viendo tu progreso en la barra de navegación superior.
+              </p>
+              <p>El cuestionario consta de 4 partes diferenciadas por colores.</p>
+              <p>La duración estimada de todo el cuestionario es de 5-10
+                minutos.<br>
+              </p>
+            </div>
+            <script>
+	(function($) {
+		$(function() {
+			var submitLocked = false;
+			function submitAnswer() {
+				/* prevent multiple submissions */
+				if (submitLocked) return;
+				submitLocked = true;
+				setTimeout(function() {
+					/* allow changes from the fired event to take effect */
+					$(".answer-form").submit();
+					submitLocked = false;
+				}, 1);
+			}
+
+			$(".answer-form input[type='radio']").change(submitAnswer).click(submitAnswer);
+			$(".answer-form label").click(submitAnswer);
+
+			if ($(".nextprevious .back-button").length) {
+				/* back button needs to be shown - keep the next/previous panel but hide the 'next' button */
+				$(".answer-form .next-button").hide();
+			} else {
+				/* no buttons required - hide the entire panel */
+				$(".nextprevious").hide();
+			}
+		});
+	})(jQuery);
+</script></div> </div>
+        <!-- ./page-content --> </div>
+      <!-- ./page -->
+      <!-- Twitter script for Twitter intents & sharing -->
+      <script type="text/javascript" src="cuestionario_files/widgets.js"></script>
+    </div>
+{% endblock %}
+{% block login %}
+	<!--<br />
+	<hr />
+	<table width="100%">
+    	<tr>
+        	<td width="50%"><div align="left"><a href="{{domain}}/privatehome" class="Ta">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="{{domain}}/logout">Cerrar sesión {{user.username|upper}}</a></div></td>
+        </tr>
+    </table>-->
+{% endblock %}
+
+    

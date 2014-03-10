@@ -1,0 +1,633 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {display: block}
+audio, canvas, video {display: inline-block; *display: inline; *zoom: 1}
+audio:not([controls]) {display: none; height: 0}
+[hidden] {display: none}
+html {font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%}
+html, button, input, select, textarea {font-family: sans-serif}
+body {margin: 0}
+a:focus {outline: thin dotted}
+a:active, a:hover {outline: 0}
+h1 {font-size: 2em; margin: 0.67em 0}
+h7 {font-size: 1.5em; margin: 0.83em 0}
+h3 {font-size: 1.17em; margin: 1em 0}
+h4 {font-size: 1em; margin: 1.33em 0}
+h5 {font-size: 0.83em; margin: 1.67em 0}
+h6 {font-size: 0.75em; margin: 2.33em 0}
+abbr[title] {border-bottom: 1px dotted}
+b, strong {font-weight: bold}
+blockquote {margin: 1em 40px}
+dfn {font-style: italic}
+mark {background: #ff0; color: #000}
+p, pre {margin: 1em 0}
+code, kbd, pre, samp {font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em}
+pre {white-space: pre; white-space: pre-wrap; word-wrap: break-word}
+q {quotes: none}
+q:before, q:after {content: ''; content: none}
+small {font-size: 75%}
+sub, sup {font-size: 75%; line-height: 0; position: relative; vertical-align: baseline}
+sup {top: -0.5em}
+sub {bottom: -0.25em}
+dl, menu, ol, ul {margin: 1em 0}
+dd {margin: 0 0 0 40px}
+menu, ol, ul {padding: 0 0 0 40px}
+nav ul, nav ol {list-style: none; list-style-image: none}
+img {border: 0; -ms-interpolation-mode: bicubic}
+svg:not(:root) {overflow: hidden}
+figure {margin: 0}
+form {margin: 0}
+fieldset {border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em}
+legend {border: 0; padding: 0; white-space: normal; *margin-left: -7px}
+button, input, select, textarea {font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle}
+button, input {line-height: normal}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {-webkit-appearance: button; cursor: pointer; *overflow: visible}
+button[disabled], input[disabled] {cursor: default}
+input[type="checkbox"], input[type="radio"] {box-sizing: border-box; padding: 0; *height: 13px; *width: 13px}
+input[type="search"] {-webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {-webkit-appearance: none}
+button::-moz-focus-inner, input::-moz-focus-inner {border: 0; padding: 0}
+textarea {overflow: auto; vertical-align: top}
+table {border-collapse: collapse; border-spacing: 0}
+body {line-height: 1.5em}
+h1, h7, h3, h4, h5, h6, p, pre, ul, ol, dl, menu {margin: 0 0 1em 0}
+h1, h7, h3, h4, h5, h6 {margin-bottom: 0.5em}
+dd {margin: 0 0 0 2.5em}
+menu, ol, ul {padding: 0 0 0 2.5em}
+img {max-width: 100%}
+pre {white-space: pre-line; word-wrap: break-word}
+pre, code {color: #555}
+strong {font-weight: normal}
+em {font-style: normal}
+ul, ol {list-style: none outside none; padding-left: 0}
+.unstyled-list {list-style: none outside none; margin: 0; padding: 0}
+@font-face {font-family: 'WWFRegular'; src: url('../webfonts/wwf-webfont.eot'); src: url('../webfonts/wwf-webfont.eot?#iefix') format('embedded-opentype'), url('../webfonts/wwf-webfont.woff') format('woff'), url('../webfonts/wwf-webfont.ttf') format('truetype'), url('../webfonts/wwf-webfont.svg#WWFRegular') format('svg'); font-weight: normal; font-style: normal}
+body, input, textarea {font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif}
+em {font-style: italic}
+body {color: #222222; font-size: .9375em}
+hr {height: 0; border: none; border-top: 1px solid #cccccc}
+img {max-width: 100%}
+.container {width: 96%; max-width: 1000px; margin: 0 auto; padding: 0 2%; position: relative}
+h1, h7, h3, h4, h5, h6 {line-height: 1.4em; font-weight: 600}
+h1, h7 {font-family: 'WWFRegular', 'Arial Narrow', 'HelveticaNeue-CondensedBold', 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; font-weight: normal; text-rendering: optimizeLegibility}
+h1 {font-size: 3em}
+h7 {font-size: 1.4em}
+h3 {font-size: 1.46666666666em}
+h4 {font-size: 1em}
+.homepage-section h7, .homepage-section h3 {font-size: 1.46666666666em; font-weight: 600}
+.sidebar h3, .sidebar h7 {font-size: 1.2em}
+form legend {font-size: 1.066666667em}
+a:link, a:visited {color: #0097aa; text-decoration: none}
+a:hover, a:active, a:focus {color: #006a77}
+.button, a.button {background: #e8510a; border-radius: 2px; border: none; color: #fff; display: inline-block; font-size: .866666667em; letter-spacing: .066666667em; padding: 1em 1.5em; text-decoration: none; text-transform: uppercase; line-height: 1em; -moz-transition: background 0.2s ease-out; -webkit-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out}
+.search-button {padding: 0.75em 1em}
+.secondary, a.secondary {background: #4A4A4A}
+.button:hover, .button:focus, a:hover.button, a:focus.button {background-color: #000; -moz-transition: background-color 0.2s ease-out; -webkit-transition: background-color 0.2s ease-out; -o-transition: background-color 0.2s ease-out; transition: background-color 0.2s ease-out}
+.tertiary, a.tertiary {background: transparent; color: #777; text-decoration: none; -moz-transition: background 0.2s ease-out; -webkit-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; -moz-transition: color 0.2s ease-out; -webkit-transition: color 0.2s ease-out; -o-transition: color 0.2s ease-out; transition: color 0.2s ease-out}
+.tertiary:hover, .tertiary:focus, a:hover.tertiary, a:focus.tertiary {color: #fff; background: #777; -moz-transition: background 0.2s ease-out; -webkit-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; -moz-transition: color 0.2s ease-out; -webkit-transition: color 0.2s ease-out; -o-transition: color 0.2s ease-out; transition: color 0.2s ease-out}
+fieldset {border: none; margin: 0; padding: 0}
+form div {margin-bottom: 1.5em}
+form ul, form ol {list-style: none outside none; padding: 0}
+form label, form .note {display: block; margin-bottom: 0}
+form .answer-hint, form .note {color: #777777; font-style: normal; font-size: 0.8em}
+form .answer-hint {margin-bottom: 0; margin-left: 1.25em}
+form .inline {display: inline-block; margin-right: 1.5em}
+form label.inline {margin-right: 0.5em}
+form .checkbox-area {cursor: pointer}
+form .fieldWithErrors {margin-bottom: 0}
+form .fieldWithErrors input {border-color: #c90943; background-color: #fff0f0}
+.errorExplanation h3 {color: #c90943}
+.errorExplanation ul {list-style: disc outside none; padding-left: 1.4em}
+.inline-checkbox label, .inline-checkbox input {display: inline}
+textarea, input[type="text"], input[type="password"], input[type="url"], input[type="email"], input[type="search"], input[type="select"] {border: 1px solid #ccc; padding: 0.33em; max-width: 100%; border-radius: 3px; -webkit-appearance: none; width: 100%}
+input[type="file"] {font-size: .75em}
+textarea {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%}
+textarea:focus, input:focus {border-color: #222}
+#user_paf_address_id {width: 100%; max-width: 20em; border: 1px solid #ccc}
+.button-wrap {padding: 1.5em 3%}
+.page {background: #f4f3ec; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; margin: 0 auto; zoom: 1; background-repeat: no-repeat; background-position: center top}
+.page:before, .page:after {display: table; content: ""; zoom: 1; *display: inline}
+.page:after {clear: both}
+.questionnaire-section-food .page, .questionnaire-section-travel .page, .questionnaire-section-home .page, .questionnaire-section-stuff .page {background-color: #eeeeee}
+.page-content {zoom: 1; width: 100%; background: #f4f3ec; box-sizing: border-box; border-radius: 2px; border-bottom: 1px solid #e9e9e9}
+.page-content:before, .page-content:after {display: table; content: ""; zoom: 1; *display: inline}
+.page-content:after {clear: both}
+.page-content h1 {font-size: 3em; text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); margin-top: 1em}
+.wwf-header {width: 100%; background: #333333; position: relative; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); height: auto}
+.questionnaire .wwf-header {margin-bottom: 5em}
+a.wwf-tab {text-indent: 1000%; white-space: nowrap; overflow: hidden; display: block; background: url('../images/wwf-tab-online.png') top left no-repeat; width: 52px; height: 72px; -webkit-background-size: 52px 72.5px; -moz-background-size: 52px 72.5px; background-size: 52px 72.5px; -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); position: absolute; z-index: 300}
+.title {padding-top: 0.75em; margin-left: 1em; zoom: 1}
+.title:before, .title:after {display: table; content: ""; zoom: 1; *display: inline}
+.title:after {clear: both}
+.title h1 {margin-bottom: .4em; font-size: 1.4em; color: #fff; float: left; margin-left: 62px}
+.title h1 a:link, .title h1 a:visited {color: #fff; -moz-transition: all 0.1s ease-out; -webkit-transition: all 0.1s ease-out; -o-transition: all 0.1s ease-out; transition: all 0.1s ease-out}
+.title h1 a:hover, .title h1 a:focus, .title h1 a:active {color: #ccc; -moz-transition: all 0.1s ease-in; -webkit-transition: all 0.1s ease-in; -o-transition: all 0.1s ease-in; transition: all 0.1s ease-in}
+.title p {font-size: 1.333333333em; line-height: 1.5em}
+.menu {position: absolute; top: 0; right: 0; font-size: .45em}
+.menu a {border-radius: 0}
+.wwf-footer {background: #fff}
+.wwf-footer .container {padding: 1em 0}
+.wwf-statement {display: block; font-size: 1.6em; border-bottom: 1px solid #ccc; line-height: 1.5em; padding-bottom: .25em; font-family: 'WWFRegular', 'Arial Narrow', 'HelveticaNeue-CondensedBold', 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; font-weight: normal; text-rendering: optimizeLegibility; text-transform: none}
+.footer-contents {margin-left: 52px}
+.footer-contents ul {margin-top: 1em; padding: 0; font-size: .866666667em; text-align: right}
+.footer-contents li {display: inline; padding: 0 0.5em; border-left: solid 1px #CCC}
+.footer-contents li:first-child {border: none; padding-left: 0}
+.footer-contents a {text-decoration: none; font-size: 0.75em}
+.footer-badge {text-indent: 1000%; white-space: nowrap; overflow: hidden; display: block; background: url('../images/wwf-simple-logo.png') center center no-repeat; width: 45px; height: 62px; -webkit-background-size: 45px 62px; -moz-background-size: 45px 62px; background-size: 45px 62px; position: absolute; z-index: 200}
+.splash .page-content {padding-bottom: 0; border-bottom: none}
+.main-area {background-color: #333; background-image: url('../images/photograph-small.jpg'); background-position: center center; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; padding: 0 3%; margin: 0 auto; zoom: 1}
+.main-area:before, .main-area:after {display: table; content: ""; zoom: 1; *display: inline}
+.main-area:after {clear: both}
+.main-area .button {-webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2)}
+.explain {padding: 3em 0; text-align: center}
+.explain h7 {font-size: 2em; letter-spacing: 1px}
+.explain h7, .explain p {color: #fff; -webkit-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); -moz-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75)}
+@media only screen and (min-width: 35.5em) {.explain h7, .explain p {-webkit-text-shadow: 0 3px 9px rgba(0, 0, 0, 0.75); -moz-text-shadow: 0 3px 9px rgba(0, 0, 0, 0.75); text-shadow: 0 3px 9px rgba(0, 0, 0, 0.75)}
+}
+.explanation {border-top: 1px solid rgba(255, 255, 255, 0.9); border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 3em 0 3em; zoom: 1}
+.explanation:before, .explanation:after {display: table; content: ""; zoom: 1; *display: inline}
+.explanation:after {clear: both}
+.explanation h7 {-webkit-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); font-size: 2em; margin-bottom: 0}
+@media only screen and (min-width: 35.5em) {.explanation h7 {font-size: 3em; -webkit-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07)}
+}
+.explanation .sub {text-align: center}
+.explanation h7 {text-align: center}
+.globe-graphic {background: transparent url('../images/globe-partial-small.png') bottom right no-repeat; width: 100%; height: 13.266666667em; margin: 0 auto; -webkit-background-size: 200px 125px; -moz-background-size: 200px 125px; background-size: 200px 125px; margin-bottom: -3em}
+.graph {padding-top: 1em}
+.graph .bar {display: block; background: #333; line-height: 1em; padding: 0.5em; color: #fff; font-weight: 600; text-transform: uppercase; border-radius: 3px; letter-spacing: .066666667em; margin-bottom: 0.75em; -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1)}
+.graph .amount {color: #fff; float: right; font-size: 1.4em; font-family: 'WWFRegular', 'Arial Narrow', 'HelveticaNeue-CondensedBold', 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; font-weight: normal; text-rendering: optimizeLegibility}
+.graph .food-bar {background: #c90943; width: 49%; -webkit-box-shadow: 0 5px 0 0 #b1083b; -moz-box-shadow: 0 5px 0 0 #b1083b; box-shadow: 0 5px 0 0 #b1083b}
+.graph .travel-bar {background: #f29724; width: 66%; -webkit-box-shadow: 0 5px 0 0 #d67d0d; -moz-box-shadow: 0 5px 0 0 #d67d0d; box-shadow: 0 5px 0 0 #d67d0d}
+.graph .home-bar {background: #0097aa; width: 25%; -webkit-box-shadow: 0 5px 0 0 #008091; -moz-box-shadow: 0 5px 0 0 #008091; box-shadow: 0 5px 0 0 #008091}
+.graph .stuff-bar {background: #5e9c1c; width: 43%; -webkit-box-shadow: 0 5px 0 0 #518618; -moz-box-shadow: 0 5px 0 0 #518618; box-shadow: 0 5px 0 0 #518618}
+.reduce {border-top: 1px solid rgba(255, 255, 255, 0.9); border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 3em 0 3em; zoom: 1; background: #fff}
+.reduce:before, .reduce:after {display: table; content: ""; zoom: 1; *display: inline}
+.reduce:after {clear: both}
+.reduce h7 {-webkit-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); font-size: 2em; margin-bottom: 0}
+@media only screen and (min-width: 35.5em) {.reduce h7 {font-size: 3em; -webkit-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07)}
+}
+.reduce .sub {text-align: center}
+.reduce h7 {text-align: center}
+.reduce .reduction-graph {text-align: center; width: 100%; height: 9em; max-height: 273px; margin: 0 auto}
+.features {border-top: 1px solid rgba(255, 255, 255, 0.9); border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 3em 0 3em; zoom: 1}
+.features:before, .features:after {display: table; content: ""; zoom: 1; *display: inline}
+.features:after {clear: both}
+.features h7 {-webkit-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); font-size: 2em; margin-bottom: 0}
+@media only screen and (min-width: 35.5em) {.features h7 {font-size: 3em; -webkit-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07)}
+}
+.features .sub {text-align: center}
+.features h7 {text-align: center}
+.features .call-to-action {width: 100%; clear: both; text-align: center; zoom: 1}
+.features .call-to-action:before, .features .call-to-action:after {display: table; content: ""; zoom: 1; *display: inline}
+.features .call-to-action:after {clear: both}
+.features .call-to-action .button {font-size: 1.4em; font-weight: 600; letter-spacing: .066666667em; -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2); margin-bottom: .5em; margin-top: 1em}
+.features .unit {margin-bottom: 2em; zoom: 1}
+.features .unit:before, .features .unit:after {display: table; content: ""; zoom: 1; *display: inline}
+.features .unit:after {clear: both}
+.features .unit img {width: 35%; float: left}
+.features .unit div {padding: 0 6.563706564% 2em; width: 51.872586872%; float: left}
+.features .unit p {margin-bottom: 0; font-size: .875em}
+.features h3 {text-transform: uppercase; color: #666; text-align: left; font-size: 1em; letter-spacing: .066666667em}
+.features img {line-height: 0; border-radius: 3px; width: 100%}
+.sub {margin-bottom: 2em; color: #777777}
+@media only screen and (min-width: 35.5em) {.sub {font-size: 1.2em}
+}
+.questionnaire .page-content {border-top: 5px solid transparent; width: 96%; max-width: 1000px; margin: 0 auto; padding: 0 2%; position: relative; padding: 0; margin-bottom: 3em; border-bottom: none}
+.questionnaire-section-food .page-content {border-color: #c90943}
+.questionnaire-section-travel .page-content {border-color: #f29724}
+.questionnaire-section-home .page-content {border-color: #0097aa}
+.questionnaire-section-stuff .page-content {border-color: #5e9c1c}
+.subject-nav {width: 100%; margin-top: -4.34em}
+.subject-nav li {text-align: center; width: 25%; float: left; position: relative}
+.subject-nav li.complete .indicator {height: 27px; width: 26px; background-image: url('../../images/done-tick.png'); background-position: top center; background-repeat: no-repeat; position: absolute; top: -0.75em; right: 3%; background-size: 26px 27px}
+.subject-nav a {display: inline-block; width: 100%; text-decoration: none; background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(85%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.1))); background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.1) 100%); background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.1) 100%); background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.1) 100%); background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.1) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0)}
+.subject-nav li, .subject-nav a {color: #fff; line-height: 3em; text-transform: uppercase; letter-spacing: .066666667em; font-weight: 600}
+.subject-nav .section-food {background: #c90943}
+.subject-nav .section-travel {background: #f29724}
+.subject-nav .section-home {background: #0097aa}
+.subject-nav .section-stuff {background: #5e9c1c}
+.questions-nav ol {display: none}
+.question-counter {color: #777777}
+.question-counter p {margin: .5em 0}
+.question-counter span {font-size: 1em; font-weight: 700}
+.questionnaire-section-food .questions-nav .current {color: #fff; background-color: #c90943}
+.questionnaire-section-food .questions-nav .current:before {border-right-color: #c90943; border-top-color: #c90943; border-bottom-color: #c90943}
+.questionnaire-section-food .questions-nav .current:after {border-left-color: #c90943}
+.questionnaire-section-travel .questions-nav .current {color: #fff; background-color: #f29724}
+.questionnaire-section-travel .questions-nav .current:before {border-right-color: #f29724; border-top-color: #f29724; border-bottom-color: #f29724}
+.questionnaire-section-travel .questions-nav .current:after {border-left-color: #f29724}
+.questionnaire-section-home .questions-nav .current {color: #fff; background-color: #0097aa}
+.questionnaire-section-home .questions-nav .current:before {border-right-color: #0097aa; border-top-color: #0097aa; border-bottom-color: #0097aa}
+.questionnaire-section-home .questions-nav .current:after {border-left-color: #0097aa}
+.questionnaire-section-stuff .questions-nav .current {color: #fff; background-color: #5e9c1c}
+.questionnaire-section-stuff .questions-nav .current:before {border-right-color: #5e9c1c; border-top-color: #5e9c1c; border-bottom-color: #5e9c1c}
+.questionnaire-section-stuff .questions-nav .current:after {border-left-color: #5e9c1c}
+.questions-pane {zoom: 1; width: 96%; margin: .5em 2% 0; float: left; padding-bottom: .5em}
+.questions-pane:before, .questions-pane:after {display: table; content: ""; zoom: 1; *display: inline}
+.questions-pane:after {clear: both}
+.questions-pane h7 {font-size: 1em; font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; text-transform: none; font-weight: 600; line-height: 1.3em}
+.questions-pane form {background-color: #fff; -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); zoom: 1}
+.questions-pane form:before, .questions-pane form:after {display: table; content: ""; zoom: 1; *display: inline}
+.questions-pane form:after {clear: both}
+.questions-pane form fieldset {padding: 2.5em 3%; border-top: 1px solid #e9e9e9}
+.questions-pane form fieldset fieldset {padding: .5em 0; border-top: none}
+.questions-pane form fieldset fieldset legend {font-size: 1em; font-weight: normal}
+.questions-pane form .first {margin-top: 1.5em; border-top: none}
+.questions-pane form legend {font-size: 1.6em; font-weight: 600}
+.questions-pane form li {padding: 0em 0em; width: auto; margin-right: 2em; overflow: hidden}
+.questions-pane form label, .questions-pane form input {cursor: pointer}
+.questions-pane form label {margin-left: .1em}
+.questions-pane form input[type="checkbox"], .questions-pane form input[type="radio"] {margin-right: 0.10em; float: left; margin-top: 0.15em}
+.questions-pane fieldset {font-size: 1.1em; padding: 1.5em 3%; zoom: 1}
+.questions-pane fieldset:before, .questions-pane fieldset:after {display: table; content: ""; zoom: 1; *display: inline}
+.questions-pane fieldset:after {clear: both}
+.questions-pane fieldset img {width: 100%}
+.questions-pane .nextprevious {zoom: 1; width: 94%; text-align: center; padding: 1em 3%; float: left; border-top: 1px solid #ddd}
+.questions-pane .nextprevious:before, .questions-pane .nextprevious:after {display: table; content: ""; zoom: 1; *display: inline}
+.questions-pane .nextprevious:after {clear: both}
+.questions-pane a[rel="prev"] {float: left; border: 1px solid #e9e9e9; margin-right: 1em}
+.questions-pane input[rel="next"], .questions-pane a[rel="next"] {float: right; border: 1px solid transparent}
+.questions-pane form h7 + p {font-size: .75em}
+.question-help {zoom: 1; background: #e9e8d8; padding: 1em 3%; font-size: .866666667em; margin-top: 1em; margin-bottom: 0.5em}
+.question-help:before, .question-help:after {display: table; content: ""; zoom: 1; *display: inline}
+.question-help:after {clear: both}
+.question-help h7 {border-bottom: 1px dotted #cfcfc0; padding-bottom: .75em}
+.questionnaire-section-food .question-help h7, .questionnaire-section-food .num, .questionnaire-section-food .question-counter span {color: #c90943}
+.questionnaire-section-travel .question-help h7, .questionnaire-section-travel .num, .questionnaire-section-travel .question-counter span {color: #f29724}
+.questionnaire-section-home .question-help h7, .questionnaire-section-home .num, .questionnaire-section-home .question-counter span {color: #0097aa}
+.questionnaire-section-stuff .question-help h7, .questionnaire-section-stuff .num, .questionnaire-section-stuff .question-counter span {color: #5e9c1c}
+.profile-info {zoom: 1; padding: 2em 0; width: 100%; background: #fff; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); position: relative}
+.profile-info:before, .profile-info:after {display: table; content: ""; zoom: 1; *display: inline}
+.profile-info:after {clear: both}
+.profile-info h7 {border-bottom: 1px solid #e9e8d8; padding-bottom: 0.5em; margin-bottom: 0em; font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; text-transform: none; font-size: 1.4666666666em; font-weight: 600; margin-left: 12%; line-height: 1em}
+.profile-info h7 span {display: block; color: #aaa; font-size: 0.625em; font-weight: normal}
+.profile-info .profile-photo {width: 10%; position: absolute; left: 2%; top: 0.4em; max-width: 72px}
+.profile-info .share {font-size: .923076923em}
+.profile-info .share .button {padding: 0.66em 0.85em}
+.share .facebook {background: #3b5998}
+.share .facebook:hover {background: #263961}
+.share .twitter {background: #1daced}
+.share .twitter:hover {background: #108ec7}
+.avatar {-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box}
+.profile-contents {width: 100%; float: left}
+.stats, .footprint-indicator {width: 100%; float: left; margin-top: 1.33em}
+.planets {display: block; margin-right: 1%; height: 4.4em; background: url('../images/globe.png') center left repeat-x; -webkit-background-size: 72px; -moz-background-size: 72px; background-size: 72px; float: left}
+.footprint-figure {float: left; display: inline-block; margin-top: 0.25em}
+.footprint-figure .amount {font-size: 3.2em; color: #1798ab; line-height: .9em; font-family: 'WWFRegular', 'Arial Narrow', 'HelveticaNeue-CondensedBold', 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; font-weight: normal; text-rendering: optimizeLegibility}
+.footprint-figure .figure-desc {text-transform: uppercase; font-weight: 600; letter-spacing: 2px; font-size: 0.8em; color: #777777}
+.footprint-figure span {display: block; text-align: center}
+.stats div {display: block; margin-right: 3%; opacity: 1; margin-bottom: 0.5em}
+.stats .number {font-size: 1.4em; font-weight: 700; line-height: 1em; color: #1798ab}
+.stats .figure-desc {font-size: .8em; color: #777777; text-transform: uppercase; font-weight: 600; line-height: 1.5em; height: 1.5em; letter-spacing: 1px; vertical-align: middle}
+.share-section {background-color: #333; color: #fff; zoom: 1; text-align: center; padding: 2em 0 3em}
+.share-section:before, .share-section:after {display: table; content: ""; zoom: 1; *display: inline}
+.share-section:after {clear: both}
+.share-section h7 {font-size: 1.8em; font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; text-transform: none; text-shadow: none; font-weight: 600}
+.share-section .facebook {margin-right: .5em}
+a.login-button, a.profile-menu-button {position: absolute; top: .5em; right: 1%; background: transparent; text-transform: none; padding: 0.5em 0.75em}
+a.login-button img, a.profile-menu-button img {width: 24px; display: inline-block; vertical-align: middle}
+a.login-button span, a.profile-menu-button span {display: none; line-height: 2em; padding: 0 0.35em 0.25em}
+a.login-button {top: .6em; background: transparent url('../images/lock.png') 0.75em center no-repeat; -webkit-background-size: 9px 13px; -moz-background-size: 9px 13px; background-size: 9px 13px; letter-spacing: 0; padding-left: 2em}
+a.login-button:hover {background-color: #000}
+a.profile-menu-button.active {background-color: #000}
+.caret {display: inline-block; width: 0; height: 0; vertical-align: middle; border-top: 4px solid #FFFFFF; border-right: 4px solid transparent; border-left: 4px solid transparent; content: ""; margin-bottom: 0.2em}
+.profile-menu {display: none; padding: 1em; width: 84%; position: absolute; top: 4.2em; right: 3%; font-size: 0.925em; background: #000; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; z-index: 300; max-width: 300px; color: #a9a9a9}
+.profile-menu:after {bottom: 100%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: transparent; border-bottom-color: #000; border-width: 0.66em; right: 5%; margin-left: -0.66em}
+.profile-menu ul {padding: 0; margin: 0}
+.profile-menu ul .subitems a {padding-left: 3%}
+.profile-menu .menu_no_link, .profile-menu a, .profile-menu .label {display: inline-block; padding: 0.5em 1% 0; width: 98%}
+.profile-menu .menu_no_link, .profile-menu a {padding-bottom: .5em; border-bottom: 1px solid #333333}
+.profile-menu a {color: #fff}
+.profile-menu a:hover {color: #f29724; background: rgba(255, 255, 255, 0.1)}
+.profile-menu .last a {border-bottom: none}
+.profile-menu.active {display: block}
+.tips-area {border-top: 1px solid rgba(255, 255, 255, 0.9); border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 3em 0 3em; zoom: 1}
+.tips-area:before, .tips-area:after {display: table; content: ""; zoom: 1; *display: inline}
+.tips-area:after {clear: both}
+.tips-area:before, .tips-area:after {display: table; content: ""; zoom: 1; *display: inline}
+.tips-area:after {clear: both}
+.tips-area h7 {-webkit-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); font-size: 2em; margin-bottom: 0}
+@media only screen and (min-width: 35.5em) {.tips-area h7 {font-size: 3em; -webkit-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07)}
+}
+.tips-area .sub {text-align: center}
+.tips-area .sub {text-align: left; margin-bottom: 0.25em}
+.tips-area .next-tips {float: right}
+.tips-area h7 {font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; text-transform: none; font-weight: 600; font-size: 1.8em; -webkit-text-shadow: none; -moz-text-shadow: none; text-shadow: none}
+.regular-tips h7 {margin-bottom: 0.33em}
+.tips-title {zoom: 1; font-weight: 600; font-size: 1.6em; margin-bottom: 1em; border-bottom: 1px solid #e9e9e9}
+.tips-title:before, .tips-title:after {display: table; content: ""; zoom: 1; *display: inline}
+.tips-title:after {clear: both}
+.tips-title h3 {margin-bottom: 0; float: left; font-size: .916666667em}
+.tips-title p {font-size: .916666667em}
+.tips-title .progress {color: #777777; text-align: right}
+.tips-title .sub {max-width: 50em}
+.tips {zoom: 1}
+.tips:before, .tips:after {display: table; content: ""; zoom: 1; *display: inline}
+.tips:after {clear: both}
+.tip {border-top: 3px solid #000; box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15); background-color: #fff; border-radius: 3px; min-height: 16em; margin-bottom: 2em; position: relative; overflow: hidden; width: 96%; margin-left: 2%; margin-right: 2%}
+.tip p {color: #333; padding: 6.563706564%; padding-bottom: 0; font-size: 1.066666667em; line-height: 1.5em}
+.tip h4 {padding: 6.563706564%; padding-bottom: 0; font-family: 'WWFRegular', 'Arial Narrow', 'HelveticaNeue-CondensedBold', 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; font-weight: normal; text-rendering: optimizeLegibility; font-size: 1.8em; text-align: center}
+.tip h5 {text-transform: uppercase; text-align: center}
+.tip .tip-subject {margin: 0 6.563706564%; display: inline-block; width: auto; text-transform: uppercase; font-weight: 600; font-size: .666666667em; padding: 0.5em .75em; background: #F4F3EC; line-height: 1em; border-radius: 3px; letter-spacing: .12em}
+.tip .actions {background-color: #f4f4f4; position: absolute; bottom: 0; width: 100%; padding: 1em 0; text-align: center}
+.tip .action-button {text-indent: 1000%; white-space: nowrap; overflow: hidden; display: block; display: inline-block; height: 2.2em; width: 2.2em; -webkit-background-size: 33px; -moz-background-size: 33px; background-size: 33px; line-height: 0; margin-right: 3px; position: relative}
+.tip button {border: none; padding: 0; margin: 0; -webkit-appearance: none; background: transparent; position: relative; display: inline-block}
+.tip button:hover, .tip button:focus {-moz-transition: all 0.05s ease-out; -webkit-transition: all 0.05s ease-out; -o-transition: all 0.05s ease-out; transition: all 0.05s ease-out}
+.tip button:hover .tooltip, .tip button:focus .tooltip {-moz-transition: all 0.1s ease; -webkit-transition: all 0.1s ease; -o-transition: all 0.1s ease; transition: all 0.1s ease; visibility: visible; opacity: 1; top: -3.2em}
+.tip .tooltip {position: absolute; background: #333; color: #fff; top: -2em; left: -3.1em; width: 8em; display: inline-block; border-radius: 3px; font-size: 0.66666667em; text-transform: uppercase; font-weight: 600; padding: 0.5em 0.66em; visibility: hidden; z-index: 300; font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; opacity: 0.6}
+.tip .tooltip:before {content: ""; position: absolute; border-top: 8px solid #333; border-left: 8px solid transparent; border-right: 8px solid transparent; bottom: -8px; left: 43%}
+.tip .tooltip .action-button {-webkit-background-size: 33px; -moz-background-size: 33px; background-size: 33px; background-color: transparent; background-position: center; background-repeat: no-repeat}
+.tip .not-now .action-button {background-image: url('../images/not-now-cross.png')}
+.tip .not-now .tooltip {background-color: #c90943}
+.tip .not-now .tooltip:before {border-top-color: #c90943}
+.tip .will-do .action-button {background-image: url('../images/maybe-plus.png')}
+.tip .will-do .tooltip {background-color: #f29724}
+.tip .will-do .tooltip:before {border-top-color: #f29724}
+.tip .done .action-button {background-image: url('../images/tick-yes.png')}
+.tip .done .tooltip {background-color: #5e9c1c}
+.tip .done .tooltip:before {border-top-color: #5e9c1c}
+.tip .discuss {display: inline-block; width: auto; text-transform: uppercase; font-weight: 600; font-size: .666666667em; padding: 0.5em .75em; background: #F4F3EC; line-height: 1em; border-radius: 3px; letter-spacing: .12em; padding-left: 28px; background: transparent url('../images/reply.png') 4px 4px no-repeat; background-size: 12px 11px; position: absolute; right: 3%; padding-left: 21px; -moz-transition: none; -webkit-transition: none; -o-transition: none; transition: none; z-index: 250}
+.tip .tip-content {background: #fff}
+.tip.open .tip-content {opacity: 0; visibility: hidden; height: 0; -moz-transition: all 0.3s ease-in; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in}
+.tip .tip-message {background: #fff}
+.tip .share {text-align: center}
+.tip .share .button {font-size: 0.875em; padding: 0.66em 0.85em}
+.no-boxshadow .tip {border: 1px solid #e9e9e9 !important}
+.tip.food {border-color: #c90943}
+.tip.food .tip-subject {color: #c90943}
+.tip.travel {border-color: #f29724}
+.tip.travel .tip-subject {color: #f29724}
+.tip.home {border-color: #0097aa}
+.tip.home .tip-subject {color: #0097aa}
+.tip.stuff {border-color: #5e9c1c}
+.tip.stuff .tip-subject {color: #5e9c1c}
+.tips-complete {zoom: 1; background: #e9e8d8 url('../images/big-tick.png') 1% 65% no-repeat; padding: 3%; margin-bottom: 2em; -webkit-box-shadow: inset 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: inset 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: inset 0 1px 3px 1px rgba(0, 0, 0, 0.1)}
+.tips-complete:before, .tips-complete:after {display: table; content: ""; zoom: 1; *display: inline}
+.tips-complete:after {clear: both}
+.tips-complete h7 {margin-bottom: 0.2em; color: #5e9c1c}
+a.back-to-home {position: absolute; top: -1.2em; left: 4%; color: #777777}
+a.back-to-home:before {content: '\2039 '; margin-right: .5em; color: #777777}
+a.back-to-home:hover {color: #333}
+.discussions {border-top: 1px solid rgba(255, 255, 255, 0.9); border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 3em 0 3em; zoom: 1; border-bottom: none; margin-bottom: 0}
+.discussions:before, .discussions:after {display: table; content: ""; zoom: 1; *display: inline}
+.discussions:after {clear: both}
+.discussions h7 {-webkit-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); font-size: 2em; margin-bottom: 0}
+@media only screen and (min-width: 35.5em) {.discussions h7 {font-size: 3em; -webkit-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); -moz-text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07); text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07)}
+}
+.discussions .sub {text-align: center}
+.discussions h7 {font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; text-transform: none; font-weight: 600; font-size: 1.8em; -webkit-text-shadow: none; -moz-text-shadow: none; text-shadow: none}
+.discussions h3 {font-size: 1.2em}
+.discussions .sub {text-align: left}
+.discussions .start-discussion {margin-bottom: 2em}
+.discussions .twitter-timeline {display: none; visibility: hidden}
+.discussions .discussion-activity {margin-bottom: 1em}
+.edit-account {background-color: #fff; -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); zoom: 1}
+.edit-account:before, .edit-account:after {display: table; content: ""; zoom: 1; *display: inline}
+.edit-account:after {clear: both}
+.edit-account fieldset {padding: 1.5em 3%; border-top: 1px solid #e9e9e9}
+.edit-account fieldset fieldset {padding: .5em 0; border-top: none}
+.edit-account fieldset fieldset legend {font-size: 1em; font-weight: normal}
+.edit-account .first {margin-top: 1.5em; border-top: none}
+.edit-account legend {font-size: 1.6em; font-weight: 600}
+.edit-account input, .edit-account textarea {max-width: 30em}
+.nav-tabs {margin-left: 3%; padding-bottom: 1px}
+.nav-tabs div, .nav-tabs a {display: inline-block; background: #fff; -webkit-border-radius: 3px 3px 0 0; -moz-border-radius: 3px 3px 0 0; border-radius: 3px 3px 0 0; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; padding: .75em 3%; border: 1px solid #e9e9e9; margin-right: 1%; margin-bottom: 0}
+.nav-tabs div {border-bottom-color: #fff}
+.change-photo {zoom: 1}
+.change-photo:before, .change-photo:after {display: table; content: ""; zoom: 1; *display: inline}
+.change-photo:after {clear: both}
+.change-photo img {width: 120px; float: left; padding-right: 1.5%; border-right: 1px solid #e9e9e9; margin-right: 1.5%}
+.change-photo label {margin-bottom: 0.5em}
+.avatar_list {zoom: 1; max-width: 500px}
+.avatar_list:before, .avatar_list:after {display: table; content: ""; zoom: 1; *display: inline}
+.avatar_list:after {clear: both}
+.avatar_list img {max-width: 100%; width: 100%}
+.avatar_list div {width: 18.4%; float: left; margin-bottom: 2%; margin-right: 2%; line-height: 0}
+.avatar_list div:nth-child(5n+5) {margin-right: 0}
+.avatar_list label {border: 1px solid transparent; cursor: pointer}
+.avatar_list label.selected {border: 3px solid #c90943}
+.avatar_list label.selected img {background: #5e9c1c; opacity: 0.8}
+.avatar_list input {position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0}
+.login-page h1, .sign-up-community h1 {text-align: center}
+.login-page form, .sign-up-community form {background-color: #fff; -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); zoom: 1}
+.login-page form:before, .sign-up-community form:before, .login-page form:after, .sign-up-community form:after {display: table; content: ""; zoom: 1; *display: inline}
+.login-page form:after, .sign-up-community form:after {clear: both}
+.login-page form fieldset, .sign-up-community form fieldset {padding: 1.5em 3%; border-top: 1px solid #e9e9e9}
+.login-page form fieldset fieldset, .sign-up-community form fieldset fieldset {padding: .5em 0; border-top: none}
+.login-page form fieldset fieldset legend, .sign-up-community form fieldset fieldset legend {font-size: 1em; font-weight: normal}
+.login-page form .first, .sign-up-community form .first {margin-top: 1.5em; border-top: none}
+.login-page form legend, .sign-up-community form legend {font-size: 1.6em; font-weight: 600}
+.login-page form fieldset, .sign-up-community form fieldset {padding: 1.5em 5% 0}
+.login-page form input[type="text"], .sign-up-community form input[type="text"], .login-page form input[type="password"], .sign-up-community form input[type="password"], .login-page form input[type="email"], .sign-up-community form input[type="email"] {width: 98%}
+.login-page form .button, .sign-up-community form .button {max-width: 8em}
+.login-page .signup, .sign-up-community .signup {margin-left: 0.5em}
+.login-page small, .sign-up-community small {display: block}
+.login-page.container, .sign-up-community.container {max-width: 24em; padding-bottom: 2em}
+.results h1 {text-align: center; margin-bottom: 0; margin-top: 0.5em}
+.results h7 {font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; text-transform: none; font-weight: 600; font-size: 1.3333333em}
+.results .results-area {background-color: #333; background-image: url('../images/photograph-small.jpg'); background-position: center center; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; color: #fff; -webkit-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); -moz-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); zoom: 1}
+.results .results-area h1 {-webkit-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); -moz-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75)}
+@media only screen and (min-width: 35.5em) {.results .results-area h1 {-webkit-text-shadow: 0 3px 9px rgba(0, 0, 0, 0.75); -moz-text-shadow: 0 3px 9px rgba(0, 0, 0, 0.75); text-shadow: 0 3px 9px rgba(0, 0, 0, 0.75)}
+}
+.results .results-area:before, .results .results-area:after {display: table; content: ""; zoom: 1; *display: inline}
+.results .results-area:after {clear: both}
+.results .results-area .footprint-viz {zoom: 1}
+.results .results-area .footprint-viz:before, .results .results-area .footprint-viz:after {display: table; content: ""; zoom: 1; *display: inline}
+.results .results-area .footprint-viz:after {clear: both}
+.results .results-area .footprint-figure .amount, .results .results-area .footprint-figure .figure-desc {color: #fff}
+.results .results-area .planets-row {margin: 1em auto 1.5em; zoom: 1}
+.results .results-area .planets-row:before, .results .results-area .planets-row:after {display: table; content: ""; zoom: 1; *display: inline}
+.results .results-area .planets-row:after {clear: both}
+.results .results-area .footprint-statement {zoom: 1; font-size: 1.1em; text-align: center; font-weight: 400; line-height: 1.5em; margin-bottom: 1em}
+.results .results-area .footprint-statement:before, .results .results-area .footprint-statement:after {display: table; content: ""; zoom: 1; *display: inline}
+.results .results-area .footprint-statement:after {clear: both}
+.results .results-area .footprint-statement span {font-size: 1.3333334em; display: block; font-weight: 600; line-height: 1.5em}
+.results .results-area .footprint-statement b {background-color: #c90943; display: inline-block; padding: 0 0.25em; margin: 0 0.15em; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; -webkit-text-shadow: none; -moz-text-shadow: none; text-shadow: none; font-weight: 600}
+.results .footprint-info {zoom: 1; background: #f4f3ec; border-bottom: 1px solid #e9e8d8; padding: 1em 0}
+.results .footprint-info:before, .results .footprint-info:after {display: table; content: ""; zoom: 1; *display: inline}
+.results .footprint-info:after {clear: both}
+.results .footprint-info .about-score {margin-bottom: 1em}
+.results .footprint-info p {max-width: 30em; color: #777777; font-size: 0.875em}
+.results .footprint-info ul {margin-bottom: 0}
+.results .footprint-info li {font-size: 1em; padding: 0.25em 0 0.5em 1.8em; display: block; background-image: url('../images/footprint-info-sprite.png'); background-color: transparent; background-repeat: no-repeat; -webkit-background-size: 23px 133px; -moz-background-size: 23px 133px; background-size: 23px 133px}
+.results .footprint-info .lower {background-position: left 3px}
+.results .footprint-info .higher {background-position: left -50px}
+.results .footprint-info .tonnes {background-position: left -108px}
+.benefits h7 {color: #5e9c1c}
+.benefits .benefit {zoom: 1; padding-left: 120px; margin-bottom: 1.5em}
+.benefits .benefit:before, .benefits .benefit:after {display: table; content: ""; zoom: 1; *display: inline}
+.benefits .benefit:after {clear: both}
+.benefits .icon {background: url(../images/benefits-sprite@2.png) left top no-repeat; -webkit-background-size: 370px 250px; -moz-background-size: 370px 250px; background-size: 370px 250px; margin-left: -120px; height: 65px; width: 120px; float: left}
+.benefits .badges .icon {background-position: -140px -100px}
+.benefits .challenge .icon {background-position: -280px -200px}
+.sign-up {background: #fff; padding: 2em 0 0; zoom: 1}
+.sign-up:before, .sign-up:after {display: table; content: ""; zoom: 1; *display: inline}
+.sign-up:after {clear: both}
+.sign-up input {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box}
+.sign-up h7 {font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; text-transform: none; font-weight: 600}
+.sign-up h3 {font-size: 1.2em}
+.sign-up fieldset {margin: 0 auto 2em; border-bottom: 1px solid #f4f3ec; padding-bottom: 1em}
+.sign-up-form .sign-up-contact {margin-bottom: 0.75em}
+.sign-up-form .sign-up-contact p {display: inline-block}
+.sign-up-form .sign-up-contact label, .sign-up-form .sign-up-contact input {display: inline}
+.profile-info {}
+.profile-info .user-email {color: #777777; margin-left: 12%}
+.profile-content {margin-top: 3em}
+.profile-content h7 {font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; text-transform: none; font-weight: 600; font-size: 1.6em}
+.all-badges-component {margin-bottom: 2em}
+.all-badges-component ul {zoom: 1}
+.all-badges-component ul:before, .all-badges-component ul:after {display: table; content: ""; zoom: 1; *display: inline}
+.all-badges-component ul:after {clear: both}
+.all-badges-component .badge-thumb {width: 61px; height: 61px; -webkit-background-size: 60px 1560px; -moz-background-size: 60px 1560px; background-size: 60px 1560px; background-image: url('../images/badges.png'); background-repeat: no-repeat; text-indent: 1000%; white-space: nowrap; overflow: hidden; display: block; float: left; width: 30%; margin-right: 2%; max-width: 60px; margin-bottom: 0.33em}
+.all-badges-component .all {display: inline-block; width: auto; text-transform: uppercase; font-weight: 600; font-size: .666666667em; padding: 0.5em .75em; background: #F4F3EC; line-height: 1em; border-radius: 3px; letter-spacing: .12em; background: #e9e8d8}
+.timeline li {background: #fff; border-radius: 3px; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); padding: 1em 2%; margin-bottom: 1.5em; position: relative; border-top: 2px solid #000}
+.timeline .timestamp {display: inline-block; width: auto; text-transform: uppercase; font-weight: 600; font-size: .666666667em; padding: 0.5em .75em; background: #F4F3EC; line-height: 1em; border-radius: 3px; letter-spacing: .12em}
+.timeline .badge-event .timestamp {margin-left: 20px}
+.timeline .food {border-color: #c90943}
+.timeline .food .timestamp, .timeline .food .action {color: #c90943}
+.timeline .travel {border-color: #f29724}
+.timeline .travel .timestamp, .timeline .travel .action {color: #f29724}
+.timeline .home {border-color: #0097aa}
+.timeline .home .timestamp, .timeline .home .action {color: #0097aa}
+.timeline .stuff {border-color: #5e9c1c}
+.timeline .stuff .timestamp, .timeline .stuff .action {color: #5e9c1c}
+.timeline .discussion-event {border-color: #e8510a}
+.timeline .discussion-event .timestamp, .timeline .discussion-event .action {color: #e8510a}
+.timeline .badge-thumb {width: 61px; height: 61px; -webkit-background-size: 60px 1560px; -moz-background-size: 60px 1560px; background-size: 60px 1560px; background-image: url('../images/badges.png'); background-repeat: no-repeat; display: block; float: left; display: none}
+.timeline .badge-event {border-color: #1798ab}
+.timeline .badge-event h3 {color: #1798ab}
+.timeline .badge-event .timestamp, .timeline .badge-event .action {color: #1798ab}
+.timeline .badge-event .action, .timeline .badge-event p {margin-left: 80px}
+.timeline .badge-event .badge-thumb {display: block}
+.timeline .action {margin-bottom: 0.5em}
+.timeline p {margin-bottom: 0.5em; font-size: 1em}
+.other-profile-information h3 {font-size: 1.4em}
+.bio {margin-bottom: 2em}
+.all-badges .badge-description {font-size: 1em}
+.all-badges .badge-thumb {background-image: url('../images/badges-bw.png')}
+.all-badges .completed .badge-thumb {background-image: url('../images/badges.png')}
+.all-badges .badge-event {border-color: #e9e9e9; opacity: 0.66}
+.all-badges .badge-event h3 {color: #777777}
+.all-badges .badge-event.completed {opacity: 1; border-color: #f29724}
+.all-badges .badge-event.completed h3 {color: #f29724}
+.all-badges .badge-event .timestamp, .all-badges .badge-event .action {color: #f29724}
+.all-badges .badge-event .action, .all-badges .badge-event p {margin-left: 80px}
+.discussions-home {margin-top: 4em}
+.discussions-home h1 {font-size: 3em; text-shadow: 0 4px 0 rgba(0, 0, 0, 0.07)}
+.discussions-home h7 {text-transform: none; font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; font-weight: 600}
+.discussions-home h7 {font-size: 1.6em}
+.discussions-home .new-room {position: absolute}
+.discussions-home .topics h3 {font-size: 1em}
+.discussions-home .rooms li {margin-bottom: 0.5em; border-bottom: 1px solid #d0d0d0}
+.slats li img {float: left; margin: 0 10px 0 0; height: 46px; width: 46px; border-radius: 3px}
+.slats p, .slats h4, .slats h3 {margin-left: 60px}
+.slats .meta {color: #777777; margin-bottom: 0.5em}
+.slats .meta.last {margin-bottom: 0}
+.discussions-forum {margin-top: 4em}
+.discussions-forum h1, .discussions-forum h7 {text-transform: none; font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; font-weight: 600}
+.discussions-forum h1 {-webkit-text-shadow: none; -moz-text-shadow: none; text-shadow: none; font-size: 1.6em; color: #777777}
+.discussions-forum span {margin-bottom: 0.5em}
+.discussions-list {zoom: 1; margin: 3em 0 0 0}
+.discussions-list:before, .discussions-list:after {display: table; content: ""; zoom: 1; *display: inline}
+.discussions-list:after {clear: both}
+.discussions-list li {float: left; width: 100%; padding-bottom: 1.5em; position: relative}
+.discussions-list .discussion-entry {background: #fff; border-radius: 3px; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); padding: 1em 2%; margin-top: -2em; margin-bottom: 1.5em; position: relative}
+.discussions-list .time {display: inline-block; width: auto; text-transform: uppercase; font-weight: 600; font-size: .666666667em; padding: 0.5em .75em; background: #F4F3EC; line-height: 1em; border-radius: 3px; letter-spacing: .12em; margin-left: 60px}
+.discussions-list .replies {display: inline-block; width: auto; text-transform: uppercase; font-weight: 600; font-size: .666666667em; padding: 0.5em .75em; background: #F4F3EC; line-height: 1em; border-radius: 3px; letter-spacing: .12em; background: #f4f3ec url('../images/reply.png') 4px 4px no-repeat; margin-right: 6px; padding-left: 2em; background-size: 12px 11px}
+.sidebar .discussion-rooms h3 {font-size: 1em}
+.mw_avatar_with_footprint {position: relative; max-width: 48px}
+.mw_avatar_with_footprint img {width: 48px; height: 48px}
+.mw_avatar_with_footprint .mw_footprint_bubble {position: absolute; display: inline-block; width: auto; text-transform: uppercase; font-weight: 600; font-size: .666666667em; padding: 0.5em .75em; background: #F4F3EC; line-height: 1em; border-radius: 3px; letter-spacing: .12em; background: #5e9c1c; color: #fff; left: -6px; bottom: -57px; padding: 0.25em 0.5em; max-width: 48px}
+.discussion-page {margin-top: 4em}
+.discussion-page .topic {background: #fff; border-radius: 3px; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); padding: 1em 2%}
+.discussion-page .mod-links {text-align: right; color: #777777}
+.discussion-page .topic-body {border-bottom: 1px solid #e9e9e9; padding-bottom: 0.5em; margin-bottom: 1.5em}
+.discussion-page .mw_avatar_with_footprint {float: left}
+.discussion-page .mw_avatar_with_footprint .mw_footprint_bubble {bottom: -1px}
+.discussion-page h4 {font-size: 1.3em; margin-bottom: 1em}
+.discussion-page .discussion-entry {padding-bottom: .5em; border-bottom: 1px solid #e9e9e9; margin-bottom: 1em}
+.tip-discussion {margin-top: 5em}
+.tip-discussion .back-to-home {top: -2.2em}
+.reply {border-bottom: 1px solid #e9e9e9; margin-bottom: 1em; padding-bottom: .5em; margin-left: 3%}
+.reply .mw_avatar_with_footprint {float: left}
+.reply .mw_avatar_with_footprint .mw_footprint_bubble {bottom: -1px}
+.reply p, .reply .poster {margin-left: 60px}
+.reply .meta {color: #777777}
+.new-discussion form {background-color: #fff; -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); zoom: 1}
+.new-discussion form:before, .new-discussion form:after {display: table; content: ""; zoom: 1; *display: inline}
+.new-discussion form:after {clear: both}
+.new-discussion form fieldset {padding: 1.5em 3%; border-top: 1px solid #e9e9e9}
+.new-discussion form fieldset fieldset {padding: .5em 0; border-top: none}
+.new-discussion form fieldset fieldset legend {font-size: 1em; font-weight: normal}
+.new-discussion form .first {margin-top: 1.5em; border-top: none}
+.new-discussion form legend {font-size: 1.6em; font-weight: 600}
+#alert {position: fixed; top: -1000px; z-index: 500; height: auto; width: 100%; max-width: 20em; margin-left: -10em; left: 50%; zoom: 1; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); font-size: 0.875em}
+#alert:before, #alert:after {display: table; content: ""; zoom: 1; *display: inline}
+#alert:after {clear: both}
+#alert a.close-notification {display: none; position: absolute; top: 0.2em; right: 0.5em; font-size: 0.75em; color: #fff; text-decoration: none}
+#alert a.close-notification:hover, #alert a.close-notification:focus {text-decoration: underline; color: #fff}
+#alert .badge_notice a.close-notification {font-size: 0.65em}
+#alert.show {top: 0; -moz-transition: top 0.5s ease-out; -webkit-transition: top 0.5s ease-out; -o-transition: top 0.5s ease-out; transition: top 0.5s ease-out}
+#alert.show .close-notification {display: block}
+.system-notification {background-color: #222222; color: #fff; -webkit-border-radius: 0 0 3px 3px; -moz-border-radius: 0 0 3px 3px; border-radius: 0 0 3px 3px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box}
+.system-notification .message {padding: 1.5em 1.5em 1em}
+.system-notification .actions {width: 100%; background: rgba(255, 255, 255, 0.1); zoom: 1; padding: .5em 0}
+.system-notification .actions:before, .system-notification .actions:after {display: table; content: ""; zoom: 1; *display: inline}
+.system-notification .actions:after {clear: both}
+.system-notification h7 {font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; text-transform: none; font-weight: 600; font-size: 1.4em; line-height: 1.2em}
+.system-notification.notice {font-size: 1.2em}
+.system-notification.notice .message {padding-bottom: 1.5em; background-image: url('../images/notifications-icon-sprite.png'); background-color: transparent; background-repeat: no-repeat; background-position: top left; -webkit-background-size: 120px; -moz-background-size: 120px; background-size: 120px; padding-left: 2.5em; margin-left: 1.5em}
+.system-notification.ok_notice {background: #5e9c1c}
+.system-notification.ok_notice .message {background-position: left 24px}
+.system-notification.error_notice {font-size: 1.2em; background-color: #c90943}
+.system-notification.error_notice .message {background-position: -90px -65px; background-image: url('../images/notifications-icon-sprite.png'); background-repeat: no-repeat; -webkit-background-size: 120px; -moz-background-size: 120px; background-size: 120px; background-color: transparent; padding-left: 2.5em; margin-left: 1.5em; padding-top: 0.75em}
+.system-notification.badge_notice {font-size: 1.2em; padding-bottom: 0; background: #000000 url('../images/alert-bg.png') bottom left repeat-x; -webkit-background-size: 80px 4px; -moz-background-size: 80px 4px; background-size: 80px 4px; padding-bottom: .5em}
+.system-notification.badge_notice ul {margin-bottom: 0; padding-bottom: 0}
+.system-notification.badge_notice .badge {margin-bottom: 1em; padding: 1.5em 3% 1em}
+.system-notification.badge_notice .badge-thumb {width: 61px; height: 61px; -webkit-background-size: 60px 1560px; -moz-background-size: 60px 1560px; background-size: 60px 1560px; background-image: url('../images/badges.png'); background-repeat: no-repeat; display: block; float: left; margin-right: 1.5em}
+.system-notification .share {margin-left: 89px}
+.system-notification .share a {font-size: 0.6666667em}
+.completed_100_tips .badge-thumb {background-position-y: -240px}
+.completed_25_tips .badge-thumb {background-position-y: -120px}
+.completed_5_tips .badge-thumb {background-position-y: 0}
+.completed_10_home_tips .badge-thumb {background-position-y: -960px}
+.completed_10_travel_tips .badge-thumb {background-position-y: -720px}
+.completed_10_food_tips .badge-thumb {background-position-y: -600px}
+.pledged_10_tips .badge-thumb {background-position-y: -1320px}
+.completed_10_stuff_tips .badge-thumb {background-position-y: -840px}
+.previous_calculator_user .badge-thumb {background-position-y: -1440px}
+.completed_calculator .badge-thumb {background-position-y: -360px}
+.reduced_by_25_percent .badge-thumb {background-position-y: -1200px}
+.completed_daily_challenge .badge-thumb {background-position-y: -480px}
+.all_rounder .badge-thumb {background-position-y: -1080px}
+.answer-summary p {margin-bottom: 0.5em; line-height: 1.5em}
+.answer-summary li {border-bottom: 1px solid #f4f3ec}
+.answer-summary div {margin-bottom: 0}
+.summary-page p.meta {color: #777777; font-size: 0.75em}
+.summary-page .questions-pane {padding-top: 2em}
+.summary-page .sub {margin-bottom: 0; font-size: 1em}
+.changebutton {display: block; font-size: 0.75em; margin-top: 0.2em}
+.error-explanation {color: #c90943}
+.blank-message {-webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -webkit-border-radius: 0 0 3px 3px; -moz-border-radius: 0 0 3px 3px; border-radius: 0 0 3px 3px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; padding: 1em 2%; background: #fff; margin-bottom: 1em}
+.two {margin-bottom: 1em}
+.static-page {-webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -webkit-border-radius: 0 0 3px 3px; -moz-border-radius: 0 0 3px 3px; border-radius: 0 0 3px 3px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; padding: 1em 2%; background: #fff}
+.all-tips-page {-webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); -webkit-border-radius: 0 0 3px 3px; -moz-border-radius: 0 0 3px 3px; border-radius: 0 0 3px 3px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; padding: 1em 2%; background: #fff}
+.panda-ad {display: none}
+.limit-width {max-width: 46em; margin: 0 auto}
+.flights-question .questions-pane form label {margin-left: .0}
+.flights_map_key {margin-bottom: 1.5em; margin-top: .5em}
+.flights_map_key span {display: block}
+.flights_map_key li {padding-left: 2.3em; -webkit-background-size: 20px 21px; -moz-background-size: 20px 21px; background-size: 20px 21px; background-color: transparent; background-position: left top; background-repeat: no-repeat}
+.flights_map_key .zone {font-size: 1.333333333em; font-weight: 600}
+.flights_map_key .description {margin-bottom: 1em; color: #777777}
+.flights_map_key .zone1 {background-image: url('../images/key-zone1.png')}
+.flights_map_key .zone2 {background-image: url('../images/key-zone2.png')}
+.flights_map_key .zone3 {background-image: url('../images/key-zone3.png')}
+.flights_map_key .zone4 {background-image: url('../images/key-zone4.png')}
+.flights_map_key .zone5 {background-image: url('../images/key-zone5.png')}
+.flights_map_key .zone6 {background-image: url('../images/key-zone6.png')}
+.error-page {background-color: #333; background-image: url('../images/photograph-small.jpg'); background-position: center center; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; zoom: 1}
+.error-page:before, .error-page:after {display: table; content: ""; zoom: 1; *display: inline}
+.error-page:after {clear: both}
+.error-page .message {margin: 20% 0}
+.error-page .message h1 {-webkit-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); -moz-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, Sans-serif; color: #fff; text-transform: none; font-weight: 600; font-size: 1.8em; max-width: 16em}
+.error-page .message p {font-weight: 600; color: #fff; -webkit-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); -moz-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5)}
+.error-page .message a {color: #fff; text-decoration: underline}

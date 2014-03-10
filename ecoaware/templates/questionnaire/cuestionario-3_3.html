@@ -1,0 +1,176 @@
+{% extends './questionnaire/basequestion.html' %}
+{% block title %}Ecoaware Everyday Thing's Site{% endblock %}
+{% block header %}Cuestionario{% endblock %}
+{% block javascript %}<div data-twttr-rendered="true" class="questionnaire  questionnaire-section-home">{% endblock %}
+{% block content %}
+     <div class="page">
+      <br />
+        <br />
+      <div class="page-content" role="main">
+        <div class="container">
+          <nav class="subject-nav">
+            <ol>
+              <li class="section-food complete"> <span class="indicator"></span><a
+                  href="">Personal</a> </li>
+              <li class="section-travel complete"> <span class="indicator"></span><a
+                  href="">Parte 1</a> </li>
+              <li class="section-home   current"> <a href="1"
+                  title="Comenzar la Parte 2 del cuestionario desde el inicio">Parte
+                  2</a></li>
+              <li class="section-stuff  "> <a href="">Parte 3</a> </li>
+            </ol>
+          </nav>
+          <div class="questions-pane">
+            <nav class="questions-nav">
+              <ol>
+                <li class="completed "> <span class="indicator"></span><span>Pregunta</span>
+                  1 </li>
+                <li class="completed"><span class="indicator"></span><span>pregunta</span>
+                  2</li>
+                <li class="completed current">p<span>regunta</span> 3</li>
+                <li class="outstanding"><span>pregunta</span> 4</li>
+                <li class="outstanding"><span>pregunta</span> 5</li>
+                <li class="outstanding"><span>pregunta</span> 6</li>
+              </ol>
+              <div class="question-counter">
+                <p>Pregunta <span>3</span> de <span>6</span></p>
+              </div>
+            </nav>
+            <form action="4" class="answer-form question question-describe_diet" method="post">
+              <fieldset>
+                <!--<img alt="" class="question-image" src="/images/questions/describe_diet.png" />-->
+                <ul class="answers">
+                  <li>
+                    <h4> <span class="num">5. Me pone triste....<br>
+                      </span></h4>
+                    <input class="likert" id="answer_1" name="answer1" value="1"
+                      type="radio"> <label class="likert" for="answer_1">T. en
+                      desacuerdo</label> <input class="likert" id="answer_2" name="answer1"
+                      value="2" type="radio"> <label class="likert" for="answer_2">En
+                      desacuerdo</label> <input class="likert" id="answer_3" name="answer1"
+                      value="3" type="radio"> <label class="likert" for="answer_3">Algo
+                      en desacuerdo</label> <input class="likert" id="answer_4"
+                      name="answer1" value="4" type="radio"> <label class="likert"
+                      for="answer_4">NA/ ND</label> <input class="likert" id="answer_5"
+                      name="answer1" value="5" type="radio"> <label class="likert"
+                      for="answer_5">Algo de acuerdo</label> <input class="likert"
+                      id="answer_6" name="answer1" value="6" type="radio"> <label
+                      class="likert" for="answer_6">De acuerdo</label> <input class="likert"
+                      id="answer_7" name="answer1" value="7" type="radio"> <label
+                      class="likert" for="answer_7">T. de acuerdo</label> </li>
+                  <br>
+                  <li>
+                    <h4><span class="num">6. Yo no participaría....<br>
+                      </span></h4>
+                    <input class="likert" id="submit1" name="answer2" value="1"
+                      disabled="disabled" type="radio"> <label class="likert" for="submit1">T.
+                      en desacuerdo</label> <input class="likert" id="submit2"
+                      name="answer2" value="2" disabled="disabled" type="radio">
+                    <label class="likert" for="submit2">En desacuerdo</label> <input
+                      class="likert" id="submit3" name="answer2" value="3" disabled="disabled"
+                      type="radio"> <label class="likert" for="submit3">Algo en
+                      desacuerdo</label> <input class="likert" id="submit4" name="answer2"
+                      value="4" disabled="disabled" type="radio"> <label class="likert"
+                      for="submit4">NA/ ND</label> <input class="likert" id="submit5"
+                      name="answer2" value="5" disabled="disabled" type="radio">
+                    <label class="likert" for="submit5">Algo de acuerdo</label>
+                    <input class="likert" id="submit6" name="answer2" value="6"
+                      disabled="disabled" type="radio"> <label class="likert" for="submit6">De
+                      acuerdo</label> <input class="likert" id="submit7" name="answer2"
+                      value="7" disabled="disabled" type="radio"> <label class="likert"
+                      for="submit7">T. de acuerdo</label> </li>
+                </ul>
+              </fieldset>
+              <nav class="nextprevious"> <a href="2" class="back-button button tertiary"
+                  rel="prev" title="Previous question">«</a> <input style="display: none;"
+                  class="next-button button" name="commit" rel="next" title="Next question"
+                  value="Next »" type="submit"> </nav>
+            </form>
+            <div class="question-help">
+              <h7>Para Rellenar el cuestionario</h7>
+              <p>Cada vez que respondas a la segunda pregunta del formulario,
+                pasarás automáticamente a la siguiente página. Debes mostrar tu
+                grado de acuerdo o desacuerdo según la escala siguiente:</p>
+              <p>1. Totalmente en desacuerdo<br>
+                2. En desacuerdo<br>
+                3. Algo en desacuerdo<br>
+                4. Ni de Acuerdo, ni en desacuerdo<br>
+                5. Algo de acuerdo<br>
+                6. De acuerdo<br>
+                7. Totalmente de acuerdo</p>
+            </div>
+            <script>
+            (function($) {
+              $(function() {
+                var submitLocked = false;
+                function submitAnswer() {
+                  /* prevent multiple submissions */
+                  if (submitLocked) return;
+                  submitLocked = true;
+                  setTimeout(function() {
+                    /* allow changes from the fired event to take effect */
+                    $(".answer-form").submit();
+                    submitLocked = false;
+                  }, 1);
+                }
+          
+                $(".answer-form input[type='radio'][name='answer2']").change(submitAnswer).click(submitAnswer);
+                $(".answer-form label[for$='submit']").click(submitAnswer);
+          
+                if ($(".nextprevious .back-button").length) {
+                  /* back button needs to be shown - keep the next/previous panel but hide the 'next' button */
+                  $(".answer-form .next-button").hide();
+                } else {
+                  /* no buttons required - hide the entire panel */
+                  $(".nextprevious").hide();
+                }
+              });
+            })(jQuery);
+           </script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script>
+            $(document).ready(function() {
+                //This will check the status of radio button onload
+                $('input[name=answer1]:checked').each(function() {
+                  $("#submit1").removeAttr('disabled');
+                  $("#submit2").removeAttr('disabled');
+                  $("#submit3").removeAttr('disabled');
+                  $("#submit4").removeAttr('disabled');
+                  $("#submit5").removeAttr('disabled');
+                  $("#submit6").removeAttr('disabled');
+                  $("#submit7").removeAttr('disabled');
+                  
+                });
+            
+                //This will check the status of radio button onclick
+                $('input[name=answer1]').click(function() {
+                  //$("#test").attr('disabled',false);
+                  $("#submit1").removeAttr('disabled');
+                  $("#submit2").removeAttr('disabled');
+                  $("#submit3").removeAttr('disabled');
+                  $("#submit4").removeAttr('disabled');
+                  $("#submit5").removeAttr('disabled');
+                  $("#submit6").removeAttr('disabled');
+                  $("#submit7").removeAttr('disabled');
+                });
+            });
+            </script> </div>
+        </div>
+        <!-- ./page-content --> </div>
+      <!-- ./page -->
+      <!-- Twitter script for Twitter intents & sharing -->
+      <script type="text/javascript" src="cuestionario_files/widgets.js"></script>
+    </div>
+{% endblock %}
+{% block login %}
+	<!--<br />
+	<hr />
+	<table width="100%">
+    	<tr>
+        	<td width="50%"><div align="left"><a href="{{domain}}/privatehome" class="Ta">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="{{domain}}/logout">Cerrar sesión {{user.username|upper}}</a></div></td>
+        </tr>
+    </table>-->
+{% endblock %}
+
+

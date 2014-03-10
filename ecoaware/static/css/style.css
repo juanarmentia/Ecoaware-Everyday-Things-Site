@@ -1,0 +1,174 @@
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, .buttonLink {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+:focus {/* remember to define focus styles! */
+	outline: 0;
+}
+body {
+	background: #fff;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+table {/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, td {
+	font-weight: normal;
+	text-align: left;
+}
+
+th {	
+	text-align:left;
+	color: #76c315;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a img {
+	border: 0;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+Html, body {
+	Height: 100%;
+}
+
+body {
+	background: #67890f;
+	font-family: arial,helvetica, sans-serif;
+	line-height: 25px;
+	text-align: left;
+}
+
+h1 {
+	font-size: 36px;
+	font-family:"lobster 1.4";
+	color: #76c315;
+	padding-bottom: 23.12px;
+}
+
+h2 {
+	font-size: 24px;
+	font-family:"lobster 1.4";
+	color: #717171;
+	padding-bottom: 18px;
+}
+
+h3 {
+	font-size: 20px;
+	font-family:"lobster 1.4";
+	color: #717171;
+	padding-bottom: 12px;
+}
+
+div {
+	color: #777575;
+	font-family: arial;
+	font-size: 12px;
+	padding-bottom: 3px;
+}
+
+p {
+	color: #777575;
+	font-family: arial;
+	font-size: 12px;
+	padding-bottom: 12px;
+}
+
+a {
+	color: #76c315;
+	text-decoration: none;
+}
+
+.buttonLink {
+	color: #76c315;
+	text-decoration: none;
+	background-color:transparent;
+}
+
+.buttonLink:hover {
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body {padding: 130px 0; }
+#container-wrapper {
+	background:url('../images/elegant-green-vcard-template.png')no-repeat center;
+}
+
+#container {	background: #eee; margin:0 auto; position: relative; text-align: left; width: 1000px; }
+
+#header { clear: both; height: 100px; width: 1000px; position: relative; margin: 0 0 25px 0; }
+#header h1 { font-family:"lobster 1.4"; position: absolute; top: 37px; left: 271px;}
+#header img#logo { position: absolute; top: 27px; left: 27px;}
+#header p { font-size: 14px;	position: absolute;	top: 73px; left: 120px;}
+
+#float-button a{ }
+#header #float-button img{ position: absolute; right: -30px; top: 27px; }
+
+						   
+#main {	margin: 0 auto;}
+
+#helloThere { margin: 0 0 0 -28px; padding: 0 30px 0 58px; background: transparent url(../images/hello.png) 0 0 no-repeat; }
+#helloThere h2{	font-size: 22px; color: #fff; padding: 3px 0 6px 0; margin: 0 0 15px -20px; }
+#helloThere p{ }
+#helloThere div{ }
+
+
+#portofolio { margin: 0 0 16px -28px; padding: 0 30px 0 58px; background: transparent url(../images/portofolio.png) 0 0 no-repeat; }
+#portofolio h2{	font-size: 22px; color: #fff; padding: 9px 0 6px 0; margin: 0 0 24px -4px; }
+
+#portofolio ul {}
+#portofolio ul li:first-child { margin-left: 0; }
+#portofolio ul li {	display: inline; margin-left: 14px;}
+#portofolio ul li.last{ margin-left: 15px;}
+
+#contactMe{	width: 485px;	height: 125px;	font-family: arial;	font-size: 12px;	color: #717171;	position:relative;	background: #f3f3f3; margin: 0 30px 25px 30px;  padding: 0 0 0 33px; border: dashed 1px #bcbcbc;	}
+
+#contactMe li{ float: left; width: 40%; list-style: none; }
+#contactMe li.h2{	font-family:"lobster 1.4"; font-size: 24px; padding-top: 10px;}
+#contactMe li.home{ background-image: url('../images/home.png'); background-repeat: no-repeat; background-position: 0 4px; padding-left: 30px; margin-top: -15px; }
+#contactMe li.telp{ background-image: url('../images/contact.png'); background-repeat: no-repeat; background-position: 0 15px; padding: 10px 0 0 30px;	margin-left: 30px; }
+#contactMe li.web{ background-image: url('../images/web.png'); background-repeat: no-repeat; background-position: 0 5px; padding-left: 30px ;}
+#contactMe li.email{ background-image: url('../images/email.png'); background-repeat: no-repeat; background-position: 0 18px; padding: 10px 0 0 30px;}
+
+#socialNetwork { padding: 0 0 35px 30px;}
+
+#socialNetwork ul li { display: inline; 	margin-right: 13px;}
+
+#site { position: relative; color: #fff; font-family: arial; font-size: 12px; margin: 15px auto 50px auto; text-align: center; clear: both;  width: 580px; }

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css" />
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" media="all" href="css/ie7.css" />
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/jquery.fancybox-1.3.4.css" />
+    {% block javascript %}{% endblock %}
+</head>
+<body>
+	<div id="container-wrapper">
+		<div id="container">
+			<div id="header">
+            	<h1>Ecoaware Everyday Things' Site</h1>
+            </div>
+         	<div id="main">
+				<div id="helloThere">
+    				<h2>{% block header %}{% endblock %}</h2>
+    				{% block content %}{% endblock %}
+                    {% block login %}{% endblock %}
+                </div> <!---end-helloThere-->
+            </div> <!--end-main-->
+        </div> <!--end-container-wrapper-->
+        	
+    {% block footer %}
+
+    <div id="site">Copyright &copy; 2014 MORElab.</div>
+    {% endblock %}
+    
+    <script type="text/javascript" src="{{STATIC_URL}}js/jquery.1.7.2.js"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/jquery.fancybox-1.3.4.pack.js"></script>
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			jQuery("a[rel=fancybox-gallery]").fancybox();
+		});
+
+	</script>
+	
+	<!--cufon here-->
+	<script type="text/javascript" src="{{STATIC_URL}}js/cufon-yui.js"> </script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/lobster.cufonfonts.js"> </script>
+	<script type="text/javascript">
+		Cufon.replace("h1,h2,h3"); 
+	</script>
+	<!--cufon end-->
+</body>
+</html>

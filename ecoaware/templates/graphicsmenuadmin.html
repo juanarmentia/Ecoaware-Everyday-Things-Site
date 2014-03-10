@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Ecoaware Everyday Thing's Site{% endblock %}
+{% block header %}Gráficas{% endblock %}
+{% block content %}
+	<form id='form' method="post" action="">
+        <table width="80%">
+        	<tr>
+            	<td>
+                    <select name="devices">
+                        {% for device in devices %}
+                            <option>{{ device.name }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+        		<td>
+                	<label>
+        				<input type="radio" name="graphic" value="coffeeschart/15" id="ncoffees" />
+        				Número de cafés preparados cada día
+                    </label>
+      				<br />
+      				<label>
+        				<input type="radio" name="graphic" value="energychart/15" id="energy" />
+        				Energía consumida cada día
+                    </label>
+      				<br />
+                    <label>
+        				<input type="radio" name="graphic" value="scatterchart/24/15" id="distcoffees24" />
+        				Distribución de los cafés preparados a lo largo del día (24 horas)
+                    </label>
+      				<br />
+                    <label>
+        				<input type="radio" name="graphic" value="scatterchart/12/15" id="distcoffees12" />
+        				Distribución de los cafés preparados a lo largo del día (12 horas)
+                    </label>
+      				<br />
+                </td>
+            </tr>
+        </table>
+        <p><input type='submit' value='Visualizar'/></p>
+    </form>  
+    
+{% endblock %}
+{% block login %}
+	<br />
+	<hr />
+	<table width="100%">
+    	<tr>
+        	<td width="50%"><div align="left"><a href="{{domain}}/privatehome">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="{{domain}}/logout">Cerrar sesión {{user.username|upper}}</a></div></td>
+        </tr>
+    </table>
+{% endblock %}
