@@ -4,7 +4,7 @@
 {% block content %}
 	{% if registered %}
         <strong>¡Gracias por registrate!</strong>
-        <a href="{{domain}}/signin">Vuelve a la página de inicio.</a><br />
+        <a href="../../../">Vuelve a la página de inicio.</a><br />
     {% else %}
         <form id='fulluser_form' method='post' action=''>{% csrf_token %}
             <table width="40%">{{ user_form.as_table }}{{ customUser_form.as_table }}</table>
@@ -16,10 +16,14 @@
 {% block login %}
 	<br />
 	<hr />
-	<table width="100%">
-    	<tr>
-        	<td width="50%"><div align="left"><a href="{{domain}}/{{rfid}}/questionnaire/4/6">Volver</a></div></td>
-            <td width="50%"><div align="right"><a href="{{domain}}/signin">Volver a la página de inicio</a></div></td>
-        </tr>
-    </table>
+	{% if registered %}
+    	    <br />
+        {% else %}
+	    <table width="100%">
+    	       <tr>
+                 <td width="50%"><div align="left"><a href="../../../{{rfid}}/questionnaire/4/6">Volver</a></div></td>
+                 <td width="50%"><div align="right"><a href="../../../">Volver a la página de inicio</a></div></td>
+               </tr>
+            </table>
+        {% endif %}
 {% endblock %}

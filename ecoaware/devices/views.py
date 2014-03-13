@@ -1,4 +1,5 @@
 # Create your views here.
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
 from django.template import RequestContext
@@ -18,19 +19,19 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.views import password_reset, password_reset_confirm
 
 #New device creation form
-@login_required(login_url='/signin')
+@login_required(login_url='/ecoaware')
 def newDevice(request):
     if request.method=='POST':
         form = DevicesForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('../../privatehome')
+            return HttpResponseRedirect(reverse('privatehome'))
     else:
         form = DevicesForm()
     return render_to_response('newdevice.html', {'form':form}, context_instance=RequestContext(request))
 
 #New device creation form
-@login_required(login_url='/signin')
+@login_required(login_url='/ecoaware')
 def listDevices(request):
     allDevices = Device.objects.all()
     return render_to_response('listdevices.html', {'devices':allDevices}, context_instance=RequestContext(request))
@@ -40,10 +41,9 @@ def updateDevice(request,username):
     d = Device.objects.get(username__exact=username)
     if request.method=='POST':
         form = DevicesForm(request.POST, instance = d)
-        print d
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('../../list')
+            return HttpResponseRedirect(reverse('listDevices'))
     if request.method == 'GET':
         form = DevicesForm(instance=d)
 
@@ -59,7 +59,7 @@ def newUser(request, tagrfid):
     # Set to False initially. Code changes value to True when registration succeeds.
     registered = False
 
-    if request.method == 'POST' and 'fulluser_form' in request.POST:
+    if request.method == 'POST' and 'userregister' in request.POST:
         # Attempt to grab information from the raw form information.
         # Note that we make use of both UserForm and UserProfileForm.
         user_form = UserCreateForm(data=request.POST)
@@ -129,7 +129,7 @@ def newUser(request, tagrfid):
 
 
 #Update user information
-@login_required(login_url='/signin')
+@login_required(login_url='/ecoaware')
 def updateUser(request):
     # Like before, get the request's context.
     context = RequestContext(request)
@@ -183,7 +183,7 @@ def updateUser(request):
 #Login view
 def sign_in(request):
     if not request.user.is_anonymous():
-        return HttpResponseRedirect('/privatehome')
+        return HttpResponseRedirect(reverse('privatehome'))
     signin_form = AuthenticationForm()
     signup_form = RfidForm()
     if request.method=='POST' and 'signin' in request.POST:
@@ -195,7 +195,7 @@ def sign_in(request):
             if access is not None:
                 if access.is_active:
                     login(request, access)
-                    return HttpResponseRedirect('/privatehome')
+                    return HttpResponseRedirect(reverse('privatehome'))
                 else:
                     return render_to_response('noactive.html', context_instance=RequestContext(request))
             else:
@@ -210,8 +210,8 @@ def sign_in(request):
         #print cd['rfid']
         if TagRFID.objects.filter(rfid=tagrfid).count()!=0:
             if TagRFID.objects.filter(rfid=tagrfid, active=0).count()!=0:
-                #return HttpResponseRedirect('/user/new/'+tagrfid)
-                return HttpResponseRedirect('/'+tagrfid+'/questionnaire/1/1')
+                return HttpResponseRedirect(reverse(questionnaire, kwargs={'rfid':tagrfid, 'module':'1', 'question':'1'}))
+                #return HttpResponseRedirect('/'+tagrfid+'/questionnaire/1/1')
         elif tagrfid!='':
             signin_form = AuthenticationForm()
             signup_form = RfidForm({'rfid':tagrfid})
@@ -224,7 +224,7 @@ def sign_in(request):
  
 
 #Panel view, both for admin and ordinary users
-@login_required(login_url='/signin')
+@login_required(login_url='/ecoaware')
 def privatehome(request):
     usuario = request.user
     if usuario.is_superuser:
@@ -234,13 +234,13 @@ def privatehome(request):
 
 
 #Closing session
-@login_required(login_url='/signin')
+@login_required(login_url='/ecoaware')
 def closesession(request):
     logout(request)
-    return HttpResponseRedirect('/signin')
+    return HttpResponseRedirect(reverse('sign_in'))
 
 
-@login_required(login_url='/signin')
+@login_required(login_url='/ecoaware')
 def coffeeschart(request,ndays,device):
     nDays = int(ndays)
     currentUser = request.user
@@ -258,7 +258,7 @@ def coffeeschart(request,ndays,device):
     return render_to_response('coffeesbarplot.html', {'nCoffees':nCoffees, 'superuser':admin, 'device':deviceName}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/signin')
+@login_required(login_url='/ecoaware')
 def energychart(request,ndays,device):
     nDays = int(ndays)
     currentUser = request.user
@@ -276,7 +276,7 @@ def energychart(request,ndays,device):
     return render_to_response('energybarplot.html', {'accEnergy':accEnergy, 'superuser':admin, 'device':deviceName}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/signin')
+@login_required(login_url='/ecoaware')
 def scatterchart(request,nhours,ndays,device):
     nDays = int(ndays)
     nHours = int(nhours)
@@ -301,7 +301,7 @@ def scatterchart(request,nhours,ndays,device):
         return render_to_response('coffeesscatterplot24.html', {'coffees':coffees[0], 'rangedays':rangeDays, 'startdate':coffees[2], 'finishdate':coffees[1], 'superuser':admin, 'device':deviceName}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/signin')
+@login_required(login_url='/ecoaware')
 def graphics(request):
     if request.method=='POST' and 'graphic' in request.POST:
         device = Device.objects.get(name__exact=request.POST['devices'])
@@ -369,12 +369,4 @@ def questionnaire(request, rfid, module, question):
                 userQuestion.save()
                 
     return render_to_response('questionnaire/cuestionario-'+module+'_'+question+'.html', {'rfid':rfid}, context_instance=RequestContext(request))
-
-
-
-
-
-
-
-
 

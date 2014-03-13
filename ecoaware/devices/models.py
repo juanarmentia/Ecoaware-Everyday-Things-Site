@@ -356,7 +356,7 @@ class TagRFID(models.Model):
 
 class CustomUser(models.Model):
     user = models.OneToOneField(User)
-    rfid = models.CharField(max_length=8)
+    rfid = models.CharField(max_length=10)
     twitter = models.CharField(max_length=15, blank=True)
     
     # Override the __unicode__() method to return out something meaningful!

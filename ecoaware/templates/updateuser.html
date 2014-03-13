@@ -4,7 +4,7 @@
 {% block content %}
 	{% if registered %}
         <strong>Tu perfil se ha actualizado correctamente.</strong>
-        <a href="{{domain}}/privatehome">Vuelve al panel principal.</a><br />
+        <a href="../../privatehome">Vuelve al panel principal.</a><br />
     {% else %}
         <form id='user_form' method='post' action=''>{% csrf_token %}
             <table width="40%">{{ user_form.as_table }}{{ customUser_form.as_table }}</table>
@@ -17,8 +17,8 @@
 	<hr />
 	<table width="100%">
     	<tr>
-        	<td width="50%"><div align="left"><a href="{{domain}}/privatehome">Volver</a></div></td>
-            <td width="50%"><div align="right"><a href="{{domain}}/logout">Cerrar sesión {{user.username|upper}}</a></div></td>
+            <td width="50%"><div align="left"><a href="../../privatehome">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="../../logout">Cerrar sesión {{user.username|upper}}</a></div></td>
         </tr>
     </table>
 {% endblock %}

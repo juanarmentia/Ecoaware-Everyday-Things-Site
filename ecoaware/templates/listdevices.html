@@ -9,7 +9,7 @@
         </tr>
         {% for device in devices %}
         <tr>
-            <td>&bull;</td><td>{{ device.name }}</td> <td>{{ device.city }}</td> <td align="center"><a href="{{domain}}/device/update/{{device.username}}">Actualizar</a></td>
+            <td>&bull;</td><td>{{ device.name }}</td> <td>{{ device.city }}</td> <td align="center"><a href="../device/update/{{device.username}}">Actualizar</a></td>
         </tr>
         {% endfor %}
     </table>
@@ -20,8 +20,8 @@
 	<hr />
 	<table width="100%">
     	<tr>
-        	<td width="50%"><div align="left"><a href="{{domain}}/privatehome">Volver</a></div></td>
-            <td width="50%"><div align="right"><a href="{{domain}}/logout">Cerrar sesión {{user.username|upper}}</a></div></td>
+        	<td width="50%"><div align="left"><a href="../privatehome">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="../logout">Cerrar sesión {{user.username|upper}}</a></div></td>
         </tr>
     </table>
 {% endblock %}
