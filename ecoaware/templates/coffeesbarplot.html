@@ -34,9 +34,9 @@
     	<tr >
         	<td>
                 {% if superuser %}
-                <select name="days" onchange=location.href='../../../{{device}}/coffeeschart/'+this.value>
+                <select name="days" onchange=location.href='{% 'coffeeschart' 'device' 'ndays' $}>
                 {% else %}
-                <select name="days" onchange=location.href='../../../device/coffeeschart/'+this.value>
+                <select name="days" onchange=location.href='{% 'coffeeschart' 'device' 'ndays' %}>
                 {% endif %}
                 	<option value="20" disabled selected>Selecciona un rango de días</option> 
                   	<option value="5">5</option>
@@ -61,8 +61,8 @@
 	<hr />
 	<table width="100%">
     	<tr>
-        	<td width="50%"><div align="left"><a href="../../../graphics">Volver</a></div></td>
-            <td width="50%"><div align="right"><a href="../../../logout">Cerrar sesión {{user.username|upper}}</a></div></td>
+        	<td width="50%"><div align="left"><a href="{% 'graphics' %}">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="{% 'closesession' %}">Cerrar sesión {{user.username|upper}}</a></div></td>
         </tr>
     </table>
 {% endblock %}

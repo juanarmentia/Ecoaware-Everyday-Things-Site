@@ -74,7 +74,7 @@ class CustomUserForm(ModelForm):
     
     
 class CustomUserUpdateForm(ModelForm):
-    twitter = CharField(max_length=15)
+    twitter = CharField(max_length=15, required=False)
     
     class Meta:
         model = CustomUser

@@ -4,12 +4,12 @@
 {% block content %}
 	{% if registered %}
         <strong>¡Gracias por registrate!</strong>
-        <a href="../../../">Vuelve a la página de inicio.</a><br />
+        <a href="{% 'signin' %}">Vuelve a la página de inicio.</a><br />
     {% else %}
 	<form id='fulluser_form'  method='post' action=''>{% csrf_token %}
             <table width="60%">
             	{{ user_form.as_table }}{{ customUser_form.as_table }}
-		<tr><td></td><td><input type="checkbox" id='terms'>Acepto los <a href='../../../conditions' target='_new'>terminos de uso</a></td></tr>
+		<tr><td></td><td><input type="checkbox" id='terms'>Acepto los <a href='{% 'conditions' %}' target='_new'>terminos de uso</a></td></tr>
             </table>
             <br />
             <table width="30%">
@@ -40,8 +40,8 @@
         {% else %}
 	    <table width="100%">
     	       <tr>
-                 <td width="50%"><div align="left"><a href="../../../{{rfid}}/questionnaire/4/6">Volver</a></div></td>
-                 <td width="50%"><div align="right"><a href="../../../">Volver a la página de inicio</a></div></td>
+                 <td width="50%"><div align="left"><a href="{% 'questionnaire' rfid '4' '6' %}">Volver</a></div></td>
+                 <td width="50%"><div align="right"><a href="{% 'signin' %}">Volver a la página de inicio</a></div></td>
                </tr>
             </table>
         {% endif %}

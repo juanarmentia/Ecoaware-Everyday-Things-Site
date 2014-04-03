@@ -357,11 +357,16 @@ class TagRFID(models.Model):
 class CustomUser(models.Model):
     user = models.OneToOneField(User)
     rfid = models.CharField(max_length=10)
-    twitter = models.CharField(max_length=15, blank=True)
+    twitter = models.CharField(max_length=15, blank=True, null=True)
     
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
         return self.user.username
+    
+    def save(self, *args, **kwargs):
+         if not self.twitter:
+              self.twitter = None
+         super(CustomUser, self).save(*args, **kwargs)	
     
   
 class Question(models.Model):

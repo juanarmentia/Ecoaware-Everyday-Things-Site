@@ -70,7 +70,7 @@ def newUser(request, tagrfid):
         customUser_form = CustomUserForm(data=request.POST)
 
         # If the two forms are valid...
-        if user_form.is_valid() and customUser_form.is_valid():
+        if user_form.is_valid():# and customUser_form.is_valid():
 
             # Save the user's form data to the database.
             user = user_form.save()
@@ -101,7 +101,7 @@ def newUser(request, tagrfid):
         # Print problems to the terminal.
         # They'll also be shown to the user.
         else:
-            print user_form.errors, customUser_form.errors
+            print user_form.errors#, customUser_form.errors
 
     elif request.method == 'POST':
         user_form = UserCreateForm()
@@ -149,7 +149,7 @@ def updateUser(request):
         customUser_form = CustomUserUpdateForm(data=request.POST)
 
         # If the two forms are valid...
-        if user_form.is_valid() and customUser_form.is_valid():
+        if user_form.is_valid():# and customUser_form.is_valid():
             # Save the user's form data to the database.
             currentUser = User.objects.get(username__exact=request.user.username)
             currentUser.email = request.POST['email']
@@ -169,7 +169,7 @@ def updateUser(request):
         # Print problems to the terminal.
         # They'll also be shown to the user.
         else:
-            print user_form.errors, customUser_form.errors
+            print user_form.errors#, customUser_form.errors
 
     # Not a HTTP POST, so we render our form using two ModelForm instances.
     # These forms will be blank, ready for user input.
@@ -320,11 +320,12 @@ def graphics(request):
         return render_to_response('graphicsmenu.html', {'usuario':usuario}, context_instance=RequestContext(request))
     
 
-def resetpassword(request):
-    if request.method == 'POST':
-        return password_reset(request, from_email=request.POST.get('email'))
-    else:
-        return render(request, 'forgot_password.html')
+#def resetpassword(request):
+#    if request.method == 'POST':
+#        return password_reset(request, from_email=request.POST.get('email'))
+#    else:
+#        #return render(request, 'forgot_password.html')
+#	return HttpRespondeRedirect(
 
 
 def questionnaire(request, rfid, module, question):
