@@ -40,8 +40,8 @@
         {% else %}
 	    <table width="100%">
     	       <tr>
-                 <td width="50%"><div align="left"><a href="{% 'questionnaire' rfid '4' '6' %}">Volver</a></div></td>
-                 <td width="50%"><div align="right"><a href="{% 'signin' %}">Volver a la página de inicio</a></div></td>
+                 <td width="50%"><div align="left"><a href="{% url 'questionnaire' rfid '4' '6' %}">Volver</a></div></td>
+                 <td width="50%"><div align="right"><a href="{% url 'signin' %}">Volver a la página de inicio</a></div></td>
                </tr>
             </table>
         {% endif %}

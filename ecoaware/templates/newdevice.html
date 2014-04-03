@@ -15,8 +15,8 @@
 	<hr />
 	<table width="100%">
     	<tr>
-        	<td width="50%"><div align="left"><a href="{% 'privatehome' %}">Volver</a></div></td>
-            <td width="50%"><div align="right"><a href="{% 'closesession' %}">Cerrar sesión {{user.username|upper}}</a></div></td>
+        	<td width="50%"><div align="left"><a href="{% url 'privatehome' %}">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="{% url 'closesession' %}">Cerrar sesión {{user.username|upper}}</a></div></td>
         </tr>
     </table>
 {% endblock %}

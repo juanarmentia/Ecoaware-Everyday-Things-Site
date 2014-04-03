@@ -2,9 +2,9 @@
 {% block title %}Ecoaware Everyday Thing's Site{% endblock %}
 {% block header %}Panel principal{% endblock %}
 {% block content %}
-	<p><a href="{% 'listDevices' %}t">Ver los dispositivos registrados</a></p>
-	<p><a href="{% 'newDevice' %}">Registrar un nuevo dispositivo</a></p>
-	<p><a href="{% 'graphics' %}">Ver los gráficos de uso y consumo de tu dispositivo</a></p>
+	<p><a href="{% url 'listDevices' %}t">Ver los dispositivos registrados</a></p>
+	<p><a href="{% url 'newDevice' %}">Registrar un nuevo dispositivo</a></p>
+	<p><a href="{% url 'graphics' %}">Ver los gráficos de uso y consumo de tu dispositivo</a></p>
 {% endblock %}
 {% block login %}
 	<br />
@@ -12,7 +12,7 @@
 	<table width="100%">
     	<tr>
         	<td width="50%"></td>
-            <td width="50%"><div align="right"><a href="{% 'closeSession' %}">Cerrar sesión {{user.username|upper}}</a></div></td>
+            <td width="50%"><div align="right"><a href="{% url 'closeSession' %}">Cerrar sesión {{user.username|upper}}</a></div></td>
         </tr>
     </table>
 {% endblock %}

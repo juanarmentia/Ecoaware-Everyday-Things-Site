@@ -2,18 +2,18 @@
 {% block title %}Ecoaware Everyday Thing's Site{% endblock %}
 {% block header %}Gráficas{% endblock %}
 {% block content %}
-	<p><a href="{% 'coffeeschart' 'device' '20'%}">Número de cafés preparados cada día</a></p>
-	<p><a href="{% 'energychart' 'device' '20'%}">Energía consumida cada día</a></p>
-    <p><a href="{% 'scatterchart' 'device' '24' '15'%}">Distribución de los cafés preparados a lo largo del día (24 horas)</a></p>
-    <p><a href="{% 'scatterchart' 'device' '12' '15'%}">Distribución de los cafés preparados a lo largo del día (12 horas)</a></p>
+	<p><a href="{% url 'coffeeschart' device '20'%}">Número de cafés preparados cada día</a></p>
+	<p><a href="{% url 'energychart' device '20'%}">Energía consumida cada día</a></p>
+    <p><a href="{% url 'scatterchart' device '24' '15'%}">Distribución de los cafés preparados a lo largo del día (24 horas)</a></p>
+    <p><a href="{% url 'scatterchart' device '12' '15'%}">Distribución de los cafés preparados a lo largo del día (12 horas)</a></p>
 {% endblock %}
 {% block login %}
 	<br />
 	<hr />
 	<table width="100%">
     	<tr>
-            <td width="50%"><div align="left"><a href="{% 'privatehome' %}">Volver</a></div></td>
-            <td width="50%"><div align="right"><a href="{% 'closesession' %}">Cerrar sesión {{user.username|upper}}</a></div></td>
+            <td width="50%"><div align="left"><a href="{% url 'privatehome' %}">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="{% url 'closesession' %}">Cerrar sesión {{user.username|upper}}</a></div></td>
         </tr>
     </table>
 {% endblock %}
