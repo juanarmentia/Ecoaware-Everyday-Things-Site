@@ -36,6 +36,10 @@ def listDevices(request):
     allDevices = Device.objects.all()
     return render_to_response('listdevices.html', {'devices':allDevices}, context_instance=RequestContext(request))
 
+def conditions(request):
+    return render_to_response('conditions.html', context_instance=RequestContext(request))
+
+
 @login_required(login_url='/signin')
 def updateDevice(request,username):
     d = Device.objects.get(username__exact=username)
@@ -329,7 +333,7 @@ def questionnaire(request, rfid, module, question):
             id_question = int(question)-1
         elif module == '2':
             if question == '1':
-               id_question = 4
+               id_question = 41
             else:
                 id_question1 = (int(question) + 4 + (int(question)-1)) - 2
                 id_question2 = id_question1+1

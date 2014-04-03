@@ -74,7 +74,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join("C:/ecoawareServer/ecoaware/ecoaware/",'static'),
+    os.path.join("/home/webapps/ecoaware_devices/ecoaware_git/ecoaware/",'static'),
 )
 
 # List of finder classes that know how to find static files in

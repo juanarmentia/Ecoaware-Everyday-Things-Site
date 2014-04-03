@@ -1,0 +1,69 @@
+a.wwf-tab {
+  background-image: url('../images/wwf-tab-online@2.png');
+}
+.all-badges-component .badge-thumb {
+  background-image: url('../images/badges@2.png');
+}
+.timeline .badge-thumb {
+  background-image: url('../images/badges@2.png');
+}
+.all-badges .completed .badge-thumb {
+  background-image: url('../images/badges@2.png');
+}
+.all-badges .badge-thumb {
+  background-image: url('../images/badges-bw@2.png');
+}
+.subject-nav li.complete .indicator {
+  background-image: url('../images/done-tick@2.png');
+}
+.questions-nav .indicator {
+  background-image: url('../images/done-tick-small@2.png');
+}
+a.login-button {
+  background-image: url('../images/lock@2.png');
+}
+.tip .not-now .action-button {
+  background-image: url('../images/not-now-cross@2.png');
+}
+.tip .will-do .action-button {
+  background-image: url('../images/maybe-plus@2.png');
+}
+.tip .done .action-button {
+  background-image: url('../images/tick-yes@2.png');
+}
+.tip .discuss {
+  background-image: url('../images/reply@2.png');
+}
+.planets {
+  background-image: url('../images/globe@2.png') !important;
+}
+.system-notification.badge_notice {
+  background-image: url('../images/alert-bg@2.png');
+}
+.system-notification.notice .message {
+  background-image: url('../images/notifications-icon-sprite@2.png');
+}
+.results .footprint-info li {
+  background-image: url('../images/footprint-info-sprite@2.png');
+}
+.footer-badge {
+  background-image: url('../images/wwf-simple-logo@2.png');
+}
+.flights_map_key .zone1 {
+  background-image: url('../images/key-zone1@2.png');
+}
+.flights_map_key .zone2 {
+  background-image: url('../images/key-zone2@2.png');
+}
+.flights_map_key .zone3 {
+  background-image: url('../images/key-zone3@2.png');
+}
+.flights_map_key .zone4 {
+  background-image: url('../images/key-zone4@2.png');
+}
+.flights_map_key .zone5 {
+  background-image: url('../images/key-zone5@2.png');
+}
+.flights_map_key .zone6 {
+  background-image: url('../images/key-zone6@2.png');
+}

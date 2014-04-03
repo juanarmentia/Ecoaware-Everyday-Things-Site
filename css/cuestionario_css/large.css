@@ -1,0 +1,264 @@
+/*--- $Clearfix ---*/
+/*--- $Lighten ---*/
+/*--- $Transition ---*/
+/*--- $Horziontal List ---*/
+/*--- $Unstyled list ---*/
+.unstyled-list {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+/*--- $Shadows ---*/
+/*---  Layouts ---*/
+/*
+ * Pass the arrow and the background size to add a completed arrow.
+ * Used in site.less for question and subject navigation 
+ */
+/*
+ * Pass this mixin a color and it changes the question progress arrows for you.
+ * Used in site.less
+ */
+/*
+ * Used to give meta-info a nice style
+ */
+/*
+ Badges
+ */
+.explain {
+  padding: 7em 0;
+  width: 75%;
+}
+@media only screen and (min-width: 105em) {
+  .explain {
+    padding: 11em 0;
+  }
+  .explain h7 {
+    font-size: 3.8em;
+  }
+}
+.globe-graphic {
+  background-image: url('../images/globe-partial.png');
+  -webkit-background-size: 600px 400px;
+  -moz-background-size: 600px 400px;
+  background-size: 600px 400px;
+  height: 24em;
+}
+.graph {
+  padding-top: 4em;
+}
+/* Question page */
+.questions-pane form {
+  width: 73%;
+  float: left;
+}
+.question-help {
+  width: 21%;
+  float: right;
+  margin: 0;
+  padding: 1em 1.5%;
+  position: relative;
+}
+.question-help:after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -1em;
+  width: 0;
+  height: 0;
+  border-color: transparent #e9e8d8 transparent transparent;
+  border-style: solid;
+  border-width: 1em 1em 1em 0;
+}
+.questions-nav ol {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.questions-nav li {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin: 1.5em;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 700;
+  background: #e9e8d8;
+  padding: 0 1.5em;
+  height: 3em;
+  line-height: 3em;
+}
+.questions-nav li:first-child {
+  margin-left: 0;
+}
+.questions-nav li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1.45em;
+  width: 0;
+  height: 0;
+  border-color: transparent transparent transparent #e9e8d8;
+  border-style: solid;
+  border-width: 1.5em 0  1.5em  1.5em;
+}
+.questions-nav li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1.45em;
+  width: 0;
+  height: 0;
+  border-color: #e9e8d8 #e9e8d8 #e9e8d8 #f4f3ec;
+  border-style: solid;
+  border-width: 1.5em 0 1.5em 1.5em;
+}
+.questions-nav li:first-child:before {
+  border: none;
+}
+.questions-nav .indicator {
+  height: 27px;
+  width: 26px;
+  background-image: url('../../images/done-tick-small.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -0.75em;
+  right: 3%;
+  background-size: 16px;
+  right: -3.5%;
+  -webkit-background-size: 16px 17px;
+  -moz-background-size: 16px 17px;
+  background-size: 16px 17px;
+}
+.question-counter {
+  display: none;
+}
+/* 
+	Profile page
+*/
+.profile-content .unit {
+  float: left;
+}
+.profile-content .one {
+  width: 64.5%;
+  margin-right: 1.5%;
+}
+.profile-content .two {
+  width: 31.5%;
+  margin-left: 1.5%;
+}
+.profile-content .other-profile-information {
+  width: 30%;
+}
+/* Shared profile header */
+.stats .share {
+  border-left: 1px solid #e9e9e9;
+  padding-left: 3%;
+  margin: 0;
+}
+/*
+ Tip discussion page
+*/
+.discussion-page .container .unit {
+  float: left;
+}
+.discussion-page .container .one {
+  width: 64.5%;
+  margin-right: 1.5%;
+}
+.discussion-page .container .two {
+  width: 31.5%;
+  margin-left: 1.5%;
+}
+.discussions-forum .container .unit {
+  float: left;
+}
+.discussions-forum .container .one {
+  width: 64.5%;
+  margin-right: 1.5%;
+}
+.discussions-forum .container .two {
+  width: 31.5%;
+  margin-left: 1.5%;
+}
+.discussions-home .container .unit {
+  width: 48.5%;
+  float: left;
+  margin-right: 3%;
+}
+.discussions-home .container .unit:last-child,
+.discussions-home .container .unit:nth-child(even) {
+  margin-right: 0;
+}
+.discussions-home .container .even {
+  margin-right: 0;
+}
+.discussions-home .container .one.unit {
+  margin-right: 3%;
+}
+.discussions .container .unit {
+  float: left;
+}
+.discussions .container .one {
+  width: 64.5%;
+  margin-right: 1.5%;
+}
+.discussions .container .two {
+  width: 31.5%;
+  margin-left: 1.5%;
+}
+.discussions .container .discussion-activity {
+  position: relative;
+}
+.discussions .container .start-discussion {
+  position: absolute;
+  top: 3em;
+  right: 0;
+}
+/* Tips */
+.tips .unit {
+  width: 22.75%;
+  float: left;
+  margin-right: 3%;
+  /* reset in case this has been used for other columns */
+
+}
+.tips .unit:nth-child(3n+3),
+.tips .unit:nth-child(even) {
+  margin-right: 3%;
+}
+.tips .unit:last-child,
+.tips .unit:nth-child(4n+4) {
+  margin-right: 0;
+}
+.tips .last {
+  margin-right: 0;
+}
+.tip .discuss {
+  right: -124px;
+  bottom: 7.2em;
+  overflow: hidden;
+  -moz-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.tip:hover .discuss,
+.tip:focus .discuss {
+  right: 3%;
+  padding-left: 21px;
+  -moz-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+/* Calculator complete */
+.sign-up form {
+  padding: 2em 9%;
+  margin-right: 3%;
+}
+.panda-ad {
+  display: block;
+  text-align: right;
+}
