@@ -1,0 +1,445 @@
+/*--- $Clearfix ---*/
+/*--- $Lighten ---*/
+/*--- $Transition ---*/
+/*--- $Horziontal List ---*/
+/*--- $Unstyled list ---*/
+.unstyled-list {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+/*--- $Shadows ---*/
+/*---  Layouts ---*/
+/*
+ * Pass the arrow and the background size to add a completed arrow.
+ * Used in site.less for question and subject navigation 
+ */
+/*
+ * Pass this mixin a color and it changes the question progress arrows for you.
+ * Used in site.less
+ */
+/*
+ * Used to give meta-info a nice style
+ */
+/*
+ Badges
+ */
+h1 {
+  font-size: 4.133333333em;
+  /* 62px */
+
+}
+h7 {
+  font-size: 2.42em;
+  /* 36px */
+
+}
+h3 {
+  font-size: 1.46666666666em;
+  /* 22px */
+
+}
+h4 {
+  font-size: 1em;
+  /* 13px */
+
+}
+a.wwf-tab {
+  background: url('../../images/Coffee-Beans-001.jpg') top left no-repeat;
+  -webkit-background-size: 78px 108px;
+  -moz-background-size: 78px 108px;
+  background-size: 78px 108px;
+  width: 78px;
+  height: 108px;
+}
+.title h1 {
+  font-size: 2.8em;
+  margin-left: 98px;
+  margin-bottom: 0.25em;
+}
+a.login-button,
+a.profile-menu-button {
+  right: 3%;
+  top: 1.5em;
+}
+a.login-button span,
+a.profile-menu-button span {
+  display: inline-block;
+}
+.profile-menu {
+  top: 5.2em;
+}
+.wwf-statement {
+  font-size: 2.8em;
+}
+.main-area {
+  background-image: url('../images/photograph.jpg');
+}
+.explain {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.explain h7 {
+  font-size: 3em;
+}
+.explain p {
+  font-size: 1.266666667em;
+  line-height: 1.5em;
+}
+.explain .button {
+  font-size: 1.066666667em;
+}
+.globe-graphic {
+  background-image: url('../images/globe-partial.png');
+  -webkit-background-size: 400px 267px;
+  -moz-background-size: 400px 267px;
+  background-size: 400px 267px;
+  height: 18em;
+}
+.graph .bar {
+  padding: 1em;
+}
+.reduce .reduction-graph {
+  height: 17em;
+}
+.features .grid .unit {
+  width: 30%;
+  float: left;
+  margin-right: 5%;
+  /* reset in case this has been used for other columns */
+
+}
+.features .grid .unit:nth-child(even) {
+  margin-right: 5%;
+}
+.features .grid .unit:last-child,
+.features .grid .unit:nth-child(3n+3) {
+  margin-right: 0;
+}
+.features .grid .last {
+  margin-right: 0;
+}
+.features .unit {
+  background-color: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+}
+.features .unit p {
+  font-size: .933333333em;
+}
+.features .unit img,
+.features .unit div {
+  float: none;
+  width: auto;
+}
+.features .unit div {
+  padding: 6.563706564%;
+}
+.features .unit img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.features .unit h3 {
+  text-align: center;
+}
+.page-content {
+  padding-bottom: 2em;
+}
+.page-content h1 {
+  font-size: 3.8em;
+}
+/* Questions page */
+.questionnaire .wwf-header {
+  margin-bottom: 7.5em;
+}
+.questionnaire .page-content {
+  /*margin-bottom: 13%;*/
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.subject-nav {
+  width: 50%;
+  margin-left: 15%;
+}
+.subject-nav li {
+  width: 24%;
+  margin-right: 1%;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+.questions-pane h7 {
+  font-size: 1.35em;
+}
+.questions-pane fieldset {
+  font-size: 1.333333em;
+}
+.questions-pane {
+  width: 94%;
+  float: left;
+  padding: .5em 3% 2em;
+  margin: 0;
+}
+.questions-pane input[rel="next"],
+.questions-pane a[rel="next"] {
+  float: left;
+}
+.question-help {
+  margin-bottom: 1em;
+}
+.profile-info {
+  position: relative;
+}
+.profile-info .profile-photo {
+  position: static;
+  float: left;
+  width: 10%;
+  margin-top: 2.8em;
+  margin-right: 3%;
+  max-width: none;
+}
+.profile-info h7 {
+  margin-left: 0;
+}
+.profile-info h7 span {
+  display: inline;
+  font-size: 1em;
+  font-weight: 600;
+}
+.profile-info .user-email {
+  position: absolute;
+  top: 0;
+  right: 3%;
+}
+.profile-contents {
+  width: 87%;
+  float: left;
+}
+/* Shared profile header */
+.stats div {
+  display: inline-block;
+  margin-bottom: 0;
+}
+.stats .share {
+  margin-top: 0.5em;
+}
+.tips-title {
+  width: 74.1%;
+}
+.tips-title h3 {
+  width: 66%;
+  float: left;
+}
+.tips-title .progress {
+  width: 33%;
+  float: right;
+}
+/* edit account */
+.avatar_list div {
+  width: 10.22222%;
+  margin-bottom: 1%;
+  margin-right: 1%;
+}
+.avatar_list div:nth-child(5n+5) {
+  margin-right: 1%;
+}
+.avatar_list div:nth-child(9n+9) {
+  margin-right: 0;
+}
+/* Profile page */
+.timeline p {
+  font-size: 1.25em;
+}
+.timeline .timestamp {
+  top: 1em;
+  right: 1%;
+  bottom: auto;
+  left: auto;
+  position: absolute;
+}
+.timeline .badge-event .timestamp {
+  margin-left: auto;
+}
+/* Calculator complete */
+/* This page uses tweakpoints to give the layout an extra breakpoint. We fall back to one-column much sooner than the mobile breakpoint to ensure the form is large enough and information doesn't become too cramped. This is at roughly 53ems (795px in old speak) */
+.calculator-complete .page-content {
+  padding-bottom: 0;
+}
+.results .results-area {
+  padding-bottom: 3em;
+  background-image: url('../images/photograph.jpg');
+}
+.results .results-area .footprint-statement {
+  margin-bottom: 3em;
+}
+.results .results-area .footprint-statement span {
+  font-size: 1.666667em;
+}
+@media only screen and (min-width: 53em) {
+  .results .footprint-info {
+    padding: 0;
+  }
+  .results .footprint-info .grid .one {
+    width: 48.5%;
+    float: right;
+  }
+}
+.results .footprint-info .about-score li {
+  font-size: 1em;
+}
+@media only screen and (min-width: 53em) {
+  .sign-up .grid .unit {
+    width: 48.5%;
+    float: left;
+    margin-right: 3%;
+  }
+  .sign-up .grid .unit:last-child,
+  .sign-up .grid .unit:nth-child(even) {
+    margin-right: 0;
+  }
+  .sign-up .grid .even {
+    margin-right: 0;
+  }
+}
+.sign-up .benefits h7 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+}
+.sign-up form {
+  zoom: 1;
+  overflow: hidden;
+  background: #fff;
+}
+.sign-up form:before,
+.sign-up form:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+.sign-up form:after {
+  clear: both;
+}
+@media only screen and (min-width: 53em) {
+  .sign-up form {
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    margin-top: -18em;
+    border: 1px solid #e9e8d8;
+    border-bottom: none;
+    padding: 2em 6%;
+  }
+}
+@media only screen and (min-width: 53em) {
+  .sign-up fieldset {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+.sign-up fieldset h7 {
+  font-size: 1.8em;
+}
+.footprint-statement {
+  clear: both;
+}
+/* Logged-in home */.discussions .twitter-timeline {
+  display: block;
+  visibility: visible;
+}
+.discussions .discussion-activity {
+  margin-bottom: 2em;
+}
+.discussions-list .time {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  margin-left: 0;
+}
+.discussions-forum h1 {
+  font-size: 1.6em;
+}
+.new-room {
+  position: absolute;
+  top: 1em;
+  right: 3%;
+}
+/* Tips */
+.tips .unit {
+  width: 48.5%;
+  float: left;
+  margin-right: 3%;
+}
+.tips .unit:last-child,
+.tips .unit:nth-child(even) {
+  margin-right: 0;
+}
+.tips .even {
+  margin-right: 0;
+}
+.tip {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+.tips-complete {
+  padding-left: 15%;
+}
+.questionnaire-section-food .page {
+  background-image: url('../images/food-bg.jpg');
+}
+.questionnaire-section-travel .page {
+  background-image: url('../images/travel-bg.jpg');
+}
+.questionnaire-section-home .page {
+  background-image: url('../images/home-bg.jpg');
+}
+.questionnaire-section-stuff .page {
+  background-image: url('../images/stuff-bg.jpg');
+}
+.footer-contents a {
+  font-size: 1em;
+}
+.all-badges-component {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #e9e8d8;
+}
+#alert {
+  max-width: 30em;
+  margin-left: -15em;
+  font-size: 1em;
+}
+.error-page {
+  background-image: url('../images/photograph.jpg');
+}
+.error-page .message h1 {
+  font-size: 3em;
+}
+.error-page .message p {
+  font-size: 1.4em;
+}
+
+.likert {float:left; cursor: pointer; clear:none; display:block; padding: 0px 1em 0 0; font-size: 0.5em;}
+.likert li {
+    padding: 0em 0em;
+    width: auto;
+    margin-right: 2em;
+    overflow: hidden;
+}

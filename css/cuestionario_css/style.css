@@ -1,0 +1,99 @@
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+.Thtml, .Tbody, .Tdiv, 
+.Th1, .Th2,
+.Ttable, .Tcaption, .Ttbody, .Ttfoot, .Tthead, .Ttr, .Tth, .Ttd{
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+	text-transform:none;
+}
+
+.Tbody {
+	background: #fff;
+	line-height: 1;
+}
+
+.Ttable {/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+.Tcaption, td {
+	font-weight: normal;
+	text-align: left;
+}
+
+.Tth2 {	
+	text-align:left;
+	color: #76c315;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+
+.Ta img {
+	border: 0;
+}
+
+
+
+.THtml, .Tbody {
+	Height: 100%;
+}
+
+.Tbody {
+	background: #67890f;
+	font-family: arial,helvetica, sans-serif;
+	line-height: 25px;
+	text-align: left;
+}
+
+.Th1 {
+	font-size: 36px;
+	font-family:"lobster 1.4";
+	color: #76c315;
+	padding-bottom: 23.12px;
+}
+
+.Th2 {
+	font-size: 24px;
+	font-family:"lobster 1.4";
+	color: #717171;
+	padding-bottom: 18px;
+}
+
+.Tdiv {
+	font-size: 12px;
+	padding-bottom: 3px;
+}
+
+
+.Ta {
+	color: #76c315;
+	text-decoration: none;
+}
+
+.Tbody {padding: 130px 0; }
+.Tcontainer-wrapper {
+	background:url('../../images/elegant-green-vcard-template.png')no-repeat center;
+}
+
+.Tcontainer {	background: #eee; margin:0 auto; position: relative; text-align: left; width: 1000px; }
+
+.Theader { clear: both; height: 100px; width: 1000px; position: relative; margin: 0 0 25px 0; }
+.Theader .Th1 { font-family:"lobster 1.4"; position: absolute; top: 37px; left: 271px;}
+.Theader img#logo { position: absolute; top: 27px; left: 27px;}
+						   
+.Tmain {	margin: 0 auto;}
+
+.ThelloThere { margin: 0 0 0 -28px; padding: 0 30px 0 58px; background: transparent url(../../images/hello.png) 0 0 no-repeat; }
+.ThelloThere .Th2{	font-size: 22px; color: #fff; padding: 3px 0 6px 0; margin: 0 0 15px -20px; }
+
+.Tsite { position: relative; color: #fff; font-family: arial; font-size: 12px; margin: 15px auto 50px auto; text-align: center; clear: both;  width: 580px; }

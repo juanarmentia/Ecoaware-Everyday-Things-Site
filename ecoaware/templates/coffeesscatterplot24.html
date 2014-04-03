@@ -99,9 +99,9 @@
     	<tr >
         	<td>
                 {% if superuser %}
-                <select name="days" onchange=location.href='{{domain}}/{{device}}/scatterchart/24/'+this.value>
+                <select name="days" onchange=location.href='../../../{{device}}/scatterchart/24/'+this.value>
                 {% else %}
-                <select name="days" onchange=location.href='{{domain}}/device/scatterchart/24/'+this.value>
+                <select name="days" onchange=location.href='../../../device/scatterchart/24/'+this.value>
                 {% endif %}
                 	<option value="20" disabled selected>Seleecciona un rango de días</option> 
                   	<option value="5">5</option>
@@ -126,8 +126,8 @@
 	<hr />
 	<table width="100%">
     	<tr>
-        	<td width="50%"><div align="left"><a href="{{domain}}/graphics">Volver</a></div></td>
-            <td width="50%"><div align="right"><a href="{{domain}}/logout">Cerrar sesión {{user.username|upper}}</a></div></td>
+        	<td width="50%"><div align="left"><a href="../../../graphics">Volver</a></div></td>
+            <td width="50%"><div align="right"><a href="../../../logout">Cerrar sesión {{user.username|upper}}</a></div></td>
         </tr>
     </table>
 {% endblock %}
