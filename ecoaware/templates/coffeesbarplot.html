@@ -34,7 +34,7 @@
     	<tr >
         	<td>
                 {% if superuser %}
-                <select name="days" onchange=location.href='{% url 'coffeeschart' device ndays $}'>
+                <select name="days" onchange=location.href='{% url 'coffeeschart' device ndays %}'>
                 {% else %}
                 <select name="days" onchange=location.href='{% url 'coffeeschart' device ndays %}'>
                 {% endif %}
