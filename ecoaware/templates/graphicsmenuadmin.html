@@ -14,22 +14,23 @@
                 </td>
         		<td>
                 	<label>
-        				<input type="radio" name="graphic" value="coffeeschart/15" id="ncoffees" />
+                    
+        				<input type="radio" name="graphic" value="{% url 'coffeeschart' device '15'%}" id="ncoffees" />
         				Número de cafés preparados cada día
                     </label>
       				<br />
       				<label>
-        				<input type="radio" name="graphic" value="energychart/15" id="energy" />
+        				<input type="radio" name="graphic" value="{% url 'energychart' device '15'%}energychart/15" id="energy" />
         				Energía consumida cada día
                     </label>
       				<br />
                     <label>
-        				<input type="radio" name="graphic" value="scatterchart/24/15" id="distcoffees24" />
+        				<input type="radio" name="graphic" value="{% url 'scatterchart' device '24' '15'%}" id="distcoffees24" />
         				Distribución de los cafés preparados a lo largo del día (24 horas)
                     </label>
       				<br />
                     <label>
-        				<input type="radio" name="graphic" value="scatterchart/12/15" id="distcoffees12" />
+        				<input type="radio" name="graphic" value="{% url 'scatterchart' device '12' '15'%}" id="distcoffees12" />
         				Distribución de los cafés preparados a lo largo del día (12 horas)
                     </label>
       				<br />
