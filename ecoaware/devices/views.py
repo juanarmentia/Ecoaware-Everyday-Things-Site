@@ -317,7 +317,7 @@ def graphics(request):
         allDevices = Device.objects.all()
         return render_to_response('graphicsmenuadmin.html', {'usuario':usuario, 'devices':allDevices}, context_instance=RequestContext(request))
     else:
-        return render_to_response('graphicsmenu.html', {'usuario':usuario}, context_instance=RequestContext(request))
+        return render_to_response('graphicsmenu.html', {'usuario':usuario, 'device':device}, context_instance=RequestContext(request))
     
 
 #def resetpassword(request):
