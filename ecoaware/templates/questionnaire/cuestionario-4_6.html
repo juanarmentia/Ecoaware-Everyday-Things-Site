@@ -38,7 +38,7 @@
                 <p>Pregunta <span>6</span> de <span>6</span></p>
               </div>
             </nav>
-            <form action="../../../user/new/{{rfid}}/" class="answer-form question question-describe_diet" method="post" id="lastquestionform">
+            <form action="{% url 'newUser' rfid %}" class="answer-form question question-describe_diet" method="post" id="lastquestionform">
               <fieldset>
                 <ul class="answers">
                   <li>
