@@ -34,9 +34,9 @@
     	<tr >
         	<td>
                 {% if superuser %}
-                <select name="days" onchange=location.href='{% url 'coffeeschart' device ndays %}'>
+                <select name="days" onchange=location.href='./'+this.value>
                 {% else %}
-                <select name="days" onchange=location.href='{% url 'coffeeschart' device ndays %}'>
+                <select name="days" onchange=location.href='./'+this.value>
                 {% endif %}
                 	<option value="20" disabled selected>Selecciona un rango de días</option> 
                   	<option value="5">5</option>

@@ -2,10 +2,9 @@
 {% block title %}Ecoaware Everyday Thing's Site{% endblock %}
 {% block header %}Gráficas{% endblock %}
 {% block content %}
-	<p><a href="{% url 'coffeeschart' 'device' '20'%}">Número de cafés preparados cada día</a></p>
+	<p><a href="{% url 'coffeeschart' device '20'%}">Número de cafés preparados cada día</a></p>
 	<p><a href="{% url 'energychart' device '20'%}">Energía consumida cada día</a></p>
-    <p><a href="{% url 'scatterchart' device '24' '15'%}">Distribución de los cafés preparados a lo largo del día (24 horas)</a></p>
-    <p><a href="{% url 'scatterchart' device '12' '15'%}">Distribución de los cafés preparados a lo largo del día (12 horas)</a></p>
+    <p><a href="{% url 'coffeecostchart' device  '20'%}">El coste energético de cada café por día</a></p>
 {% endblock %}
 {% block login %}
 	<br />

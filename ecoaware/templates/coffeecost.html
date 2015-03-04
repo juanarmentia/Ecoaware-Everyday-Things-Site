@@ -6,7 +6,8 @@
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
 			//var accEnergy = "{{ accEnergy|safe }}";
-            var energy = "{{ accEnergy }}";
+            //var energy = "{{ accEnergy }}";
+            var pagenum = location.pathname.match(/\/coffeecostchart\/(.*)/)[1];
         	google.load("visualization", "1", {packages:["corechart"]});
             google.setOnLoadCallback(drawChart);
 			
@@ -25,8 +26,8 @@
 				legend: { position: 'top', maxLines: 3 },
 				bar: { groupWidth: '75%' },
 				isStacked: true,
-				title: 'Desglose de la energía consumida cada día',
-				vAxis: {title: 'Energía consimida por la cafetera en Wh'},
+				title: 'Energía consumida por una taza de café en los últimos' + pagenum + 'días',
+				vAxis: {title: 'Energía consimida por café en Wh'},
 			  };
     
             var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
