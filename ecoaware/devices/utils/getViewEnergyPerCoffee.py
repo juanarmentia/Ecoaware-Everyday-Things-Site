@@ -13,7 +13,7 @@ This function get the documents from a specific group.
 Inside we create a dictionary (my_searches) whre the id,
 date in python format and the content is allocated.
 """
-def get_energy_by_group(groupName, nDays):
+def get_coffee_cost_by_group(groupName, nDays):
 	couch = couchdb.Server("http://130.206.138.42:57984")
 	db    = couch['eco-aware_devices']
 	dateKey     = 'date'
@@ -21,6 +21,7 @@ def get_energy_by_group(groupName, nDays):
 	auxDate     = ''
 	eWastedTemp    = 0.0
 	eEffectiveTemp = 0.0
+	coffee_num     = 0.0
 	firstComparisonMade = False
 	isThereConsumption  = False
 
@@ -39,21 +40,26 @@ def get_energy_by_group(groupName, nDays):
 		if tempDate >= firstDate:
 			if tempDate != auxDate:
 				if isThereConsumption: 
-					accEnergy[next(index for (index, d) in enumerate(accEnergy) if d["date"] == auxDate)]['wastedenergy']    = eWastedTemp
-					accEnergy[next(index for (index, d) in enumerate(accEnergy) if d["date"] == auxDate)]['effectiveenergy'] = eEffectiveTemp
+					if coffee_num == 0:
+						coffee_num = 1
+					#print coffee_num
+					accEnergy[next(index for (index, d) in enumerate(accEnergy) if d["date"] == auxDate)]['wastedenergy']    = eWastedTemp/coffee_num
+					accEnergy[next(index for (index, d) in enumerate(accEnergy) if d["date"] == auxDate)]['effectiveenergy'] = eEffectiveTemp/coffee_num
 				eWastedTemp    = 0.0
 				eEffectiveTemp = 0.0
+				coffee_num     = 0
 				auxDate = tempDate
 				isThereConsumption = False
 			if info['consumption_type'] == 'COFFEE':
 				eEffectiveTemp += float(info['energy_consumption_Wh'])
+				coffee_num += 1
 				isThereConsumption = True
 			elif info['consumption_type'] == 'START_TIME':
 				eEffectiveTemp += float(info['energy_consumption_Wh'])*0.7
 				eWastedTemp    += float(info['energy_consumption_Wh'])*0.3
 				isThereConsumption = True
 			else:
-				eWastedTemp += float(info['energy_consumption_Wh'])
+				eWastedTemp    += float(info['energy_consumption_Wh'])
 				isThereConsumption = True
 		else:
 			break
@@ -62,4 +68,4 @@ def get_energy_by_group(groupName, nDays):
 
 if __name__ == "__main__":
 	#print_numcoffees_by_date('UDEUSTO')
-	print get_energy_by_group('LifeUD',10)	
+	print get_coffee_cost_by_group('LifeUD',10)	
