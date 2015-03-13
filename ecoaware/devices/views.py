@@ -6,6 +6,9 @@ from django.template import RequestContext
 from ecoaware.devices.utils.getViewCoffees import get_numcoffees_by_date, get_coffees_by_date
 from ecoaware.devices.utils.getViewEnergy import get_energy_by_group
 from ecoaware.devices.utils.getViewEnergyPerCoffee import get_coffee_cost_by_group
+from ecoaware.devices.utils.getViewEnergyPersonal_vs_group import get_personal_and_group_energy
+from ecoaware.devices.utils.getViewEnergyPersonal_vs_group import get_personal_and_group_accumulated_energy
+from ecoaware.devices.utils.allgraphs import get_all_data_for_charts
 
 from .forms import DevicesForm, UserCreateForm, CustomUserForm, RfidForm, CustomUserUpdateForm, UserUpdateForm, User_QuestionForm
 from django.contrib.auth.forms import AuthenticationForm
@@ -248,6 +251,7 @@ def closesession(request):
 
 
 @login_required(login_url='/ecoaware')
+@never_cache
 def coffeeschart(request,device,ndays):
     nDays = int(ndays)
     currentUser = request.user
@@ -259,11 +263,37 @@ def coffeeschart(request,device,ndays):
         deviceName = device
     else:
         currentCustomUser = CustomUser.objects.get(user_id__exact=currentUser.id)
-        customTagRfid = TagRFID.objects.get(rfid__exact=currentCustomUser.rfid)
-        deviceName = customTagRfid.device_id
+        customTagRfid     = TagRFID.objects.get(rfid__exact=currentCustomUser.rfid)
+        deviceName        = customTagRfid.device_id
     nCoffees = get_numcoffees_by_date(deviceName, nDays)
-    return render_to_response('coffeesbarplot.html', {'nCoffees':nCoffees, 'superuser':admin, 'device':deviceName, 'ndays':nDays}, context_instance=RequestContext(request))
+    return render_to_response('coffeesgroupbarplot.html', {'nCoffees':nCoffees, 'superuser':admin, 'device':deviceName, 'ndays':nDays}, context_instance=RequestContext(request))
 
+@login_required(login_url='/ecoaware')
+@never_cache
+def coffeesuserchart(request, device, ndays):
+    nDays = int(ndays)
+    currentUser       = request.user
+    currentCustomUser = CustomUser.objects.get(user_id__exact=currentUser.id)
+    customTagRfid     = TagRFID.objects.get(rfid__exact=currentCustomUser.rfid)
+    deviceName = customTagRfid.device_id
+    device     = Device.objects.get(username=deviceName)
+
+    if currentUser.username=='admin':
+        admin = True
+    else:
+        admin = False
+    if currentUser.is_superuser:
+        deviceName = device
+    else:
+        currentCustomUser = CustomUser.objects.get(user_id__exact=currentUser.id)
+        customTagRfid     = TagRFID.objects.get(rfid__exact=currentCustomUser.rfid)
+        deviceName        = customTagRfid.device_id
+
+    #nCoffees  = get_numcoffees_by_date(deviceName, int(10))
+    accEnergy = get_all_data_for_charts(deviceName, customTagRfid, nDays)
+
+    return render_to_response('coffeesuserbarplot.html', {'accEnergy':accEnergy, 'usuario':currentUser, 'device':deviceName}, context_instance=RequestContext(request))
+    
 
 @login_required(login_url='/ecoaware')
 @never_cache
@@ -286,6 +316,43 @@ def energychart(request,ndays,device):
 
 @login_required(login_url='/ecoaware')
 @never_cache
+def energygroupandpersonalchart(request,ndays,device):
+    nDays = int(ndays)
+    currentUser = request.user
+    if currentUser.username=='admin':
+        admin = True
+    else:
+        admin = False
+    if currentUser.is_superuser:
+        deviceName = device
+    else:
+        currentCustomUser = CustomUser.objects.get(user_id__exact=currentUser.id)
+        customTagRfid     = TagRFID.objects.get(rfid__exact=currentCustomUser.rfid)
+        deviceName        = customTagRfid.device_id
+    accEnergy = get_personal_and_group_energy(deviceName, customTagRfid, nDays)
+    return render_to_response('energygroupandpersonal.html', {'accEnergy':accEnergy, 'superuser':admin, 'device':deviceName, 'ndays':nDays}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/ecoaware')
+@never_cache
+def accenergygroupandpersonalchart(request,ndays,device):
+    nDays = int(ndays)
+    currentUser = request.user
+    if currentUser.username=='admin':
+        admin = True
+    else:
+        admin = False
+    if currentUser.is_superuser:
+        deviceName = device
+    else:
+        currentCustomUser = CustomUser.objects.get(user_id__exact=currentUser.id)
+        customTagRfid     = TagRFID.objects.get(rfid__exact=currentCustomUser.rfid)
+        deviceName        = customTagRfid.device_id
+    accWastedEnergy = get_personal_and_group_accumulated_energy(deviceName, customTagRfid, nDays)
+    return render_to_response('accenergygroupandpersonal.html', {'accWastedEnergy':accWastedEnergy, 'superuser':admin, 'device':deviceName, 'ndays':nDays}, context_instance=RequestContext(request))
+
+@login_required(login_url='/ecoaware')
+@never_cache
 def coffeecostchart(request,ndays,device):
     nDays = int(ndays)
     currentUser = request.user
@@ -303,26 +370,36 @@ def coffeecostchart(request,ndays,device):
     return render_to_response('coffeecost.html', {'accEnergy':accEnergy, 'superuser':admin, 'device':deviceName, 'ndays':nDays}, context_instance=RequestContext(request))
 
 
+
 @login_required(login_url='/ecoaware')
 @never_cache
 def graphics(request):
-    currentUser = request.user
+
+    currentUser       = request.user
     currentCustomUser = CustomUser.objects.get(user_id__exact=currentUser.id)
-    customTagRfid = TagRFID.objects.get(rfid__exact=currentCustomUser.rfid)
+    customTagRfid     = TagRFID.objects.get(rfid__exact=currentCustomUser.rfid)
     deviceName = customTagRfid.device_id
-    device = Device.objects.get(username=deviceName)
-#    if request.method=='POST' and 'graphic' in request.POST:
-        #device = Device.objects.get(name__exact=request.POST['devices'])
-        #print request.POST['graphic']
-        #print device.username
-#	return HttpResponseRedirect('../'+device.username+'/'+request.POST['graphic'])
-#    else:    
-#        currentUser = request.user
+    device     = Device.objects.get(username=deviceName)
+
+    if currentUser.username=='admin':
+        admin = True
+    else:
+        admin = False
+    if currentUser.is_superuser:
+        deviceName = device
+    else:
+        currentCustomUser = CustomUser.objects.get(user_id__exact=currentUser.id)
+        customTagRfid     = TagRFID.objects.get(rfid__exact=currentCustomUser.rfid)
+        deviceName        = customTagRfid.device_id
+
+    #nCoffees  = get_numcoffees_by_date(deviceName, int(10))
+    accEnergy = get_all_data_for_charts(deviceName, customTagRfid, int(10))
+
     if currentUser.is_superuser:
         allDevices = Device.objects.all()
         return render_to_response('graphicsmenuadmin.html', {'usuario':currentUser, 'devices':allDevices}, context_instance=RequestContext(request))
     else:
-        return render_to_response('graphicsmenu.html', {'usuario':currentUser, 'device':deviceName}, context_instance=RequestContext(request))
+        return render_to_response('graphicsmenu.html', {'accEnergy':accEnergy, 'usuario':currentUser, 'device':deviceName}, context_instance=RequestContext(request))
     
 
 #def resetpassword(request):

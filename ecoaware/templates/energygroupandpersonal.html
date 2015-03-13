@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}Ecoaware Everyday Things' Site{% endblock %}
+{% block javascript %}
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+
+    	google.load('visualization', '1.1', {'packages': ['bar']});
+        google.setOnLoadCallback(drawStuff);
+        var arrayEnergyYaxis = new Array();
+        var pagenum = location.pathname.match(/\/energygroupandpersonalchart\/(.*)/)[1];
+
+        function drawStuff() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Fechas');
+            data.addColumn('number', 'Energía efectiva grupo');
+            data.addColumn('number', 'Energía desperdiciada grupo');
+            data.addColumn('number', 'Energía efectiva personal');
+            data.addColumn('number', 'Energía desperdiciada personal');
+            data.addRows([
+                {% for docs in accEnergy %}
+                    ['{{docs.date}}', parseInt('{{docs.groupEffectiveEnergy}}'), parseInt('{{docs.groupWastedEnergy}}') , parseInt('{{docs.userEffectiveEnergy}}'), parseInt('{{docs.userWastedEnergy}}')],
+                {% endfor %}
+            ]);
+            
+            {% for docs in accEnergy %}
+                    arrayEnergyYaxis.push(parseInt('{{docs.groupEffectiveEnergy}}'));
+            {% endfor %}
+            var maxEnergy = Math.max.apply(Math, arrayEnergyYaxis);
+            // Set chart options
+            var options = {
+                isStacked: true,
+                legend: { position: 'top', maxLines: 5 },
+                bar: { groupWidth: '85%' },
+                chart: {
+                    title: 'Desglose de la energía consumida en los últimos ' + pagenum + ' días:\n' + 'Se compara la energía total del grupo con la energía personal.',
+                    subtitle: 'Energía efectiva       = Energía consumida haciendo café.\n Energía desperdiciada = Energía consumida por olvidar la cafetera encendida (standby).'
+                },
+                vAxis: {
+                    viewWindow: {
+                        min: 0,
+                        max: maxEnergy + maxEnergy/2
+                    },
+                    title: 'Energía consumida en Wh',
+                },
+                series: {
+                    2: {
+                        targetAxisIndex: 1
+                    },
+                    3: {
+                        targetAxisIndex: 1
+                    }
+                },
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.charts.Bar(document.getElementById('chart_div'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        };
+    </script>
+{% endblock %}
+{% block header %}Energía consumida{% endblock %}
+{% block content %}
+	<table border="0" width="100%" align="center">
+        <tr>
+        	<td>
+            	<br />
+                <div id="chart_div" style="width: 940px; height: 550px;" align="center"></div>
+            </td>
+        </tr>
+         <tr align="center">
+            <td align="center">
+                <br />
+                <div class="styled-select">            
+                    {% if superuser %}
+                    <select name="days" onchange=location.href='./'+this.value style="cursor:pointer">
+                    {% else %}
+                    <select name="days" onchange=location.href='./'+this.value style="cursor:pointer">
+                    {% endif %}
+                        <option value="10" disabled selected>Selecciona un rango de días para visualizar consumos</option> 
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
+{% block login %}
+	<br />
+	<hr />
+    <table width="100%">
+        <tr>
+            <td width="50%"><div align="left"><a href="{% url 'graphics' %}"><h4>Volver al menú GRÁFICAS</h4></a></div></td>
+            <td width="50%"><div align="right"><a href="{% url 'closesession' %}">Cerrar sesión <b>{{user.username|upper}}</b></a></div></td>
+        </tr>
+    </table>
+{% endblock %}

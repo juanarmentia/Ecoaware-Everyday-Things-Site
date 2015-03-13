@@ -19,9 +19,9 @@ def get_coffee_cost_by_group(groupName, nDays):
 	dateKey     = 'date'
 	accEnergy   = []
 	auxDate     = ''
-	eWastedTemp    = 0.0
-	eEffectiveTemp = 0.0
-	coffee_num     = 0.0
+	eEffectiveTemp  = 0.0
+	eEffectiveTotal = 0.0
+	coffee_num      = 0.0
 	firstComparisonMade = False
 	isThereConsumption  = False
 
@@ -29,7 +29,7 @@ def get_coffee_cost_by_group(groupName, nDays):
 	
 	for i in range(0,nDays):
 		relDate = datetime.date.today() - (nDays-i-1)*datetime.timedelta(days=1)
-		accEnergy.append({'id': i, 'date': relDate, 'wastedenergy': 0, 'effectiveenergy': 0})
+		accEnergy.append({'id': i, 'date': relDate, 'effectiveenergy': 0, 'average': 0})
 	lastDate = relDate
 	firstDate = datetime.date.today() - (nDays-1)*datetime.timedelta(days=1)
 	indexCount = 0
@@ -42,28 +42,20 @@ def get_coffee_cost_by_group(groupName, nDays):
 				if isThereConsumption: 
 					if coffee_num == 0:
 						coffee_num = 1
-					#print coffee_num
-					accEnergy[next(index for (index, d) in enumerate(accEnergy) if d["date"] == auxDate)]['wastedenergy']    = eWastedTemp/coffee_num
 					accEnergy[next(index for (index, d) in enumerate(accEnergy) if d["date"] == auxDate)]['effectiveenergy'] = eEffectiveTemp/coffee_num
-				eWastedTemp    = 0.0
+					eEffectiveTotal += eEffectiveTemp/coffee_num
 				eEffectiveTemp = 0.0
 				coffee_num     = 0
 				auxDate = tempDate
 				isThereConsumption = False
 			if info['consumption_type'] == 'COFFEE':
-				eEffectiveTemp += float(info['energy_consumption_Wh'])
 				coffee_num += 1
-				isThereConsumption = True
-			elif info['consumption_type'] == 'START_TIME':
-				eEffectiveTemp += float(info['energy_consumption_Wh'])*0.7
-				eWastedTemp    += float(info['energy_consumption_Wh'])*0.3
-				isThereConsumption = True
-			else:
-				eWastedTemp    += float(info['energy_consumption_Wh'])
-				isThereConsumption = True
+			eEffectiveTemp += float(info['energy_consumption_Wh'])
+			isThereConsumption = True
 		else:
 			break
-	#sorted(accEnergy, key=lambda ident: ident['id'])
+	for (index, d) in enumerate(accEnergy):
+		accEnergy[index]['average'] = eEffectiveTotal/nDays
 	return accEnergy
 
 if __name__ == "__main__":

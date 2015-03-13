@@ -2,17 +2,261 @@
 {% block title %}Ecoaware Everyday Thing's Site{% endblock %}
 {% block header %}Gráficas{% endblock %}
 {% block content %}
-	<p><a href="{% url 'coffeeschart' device '20'%}">Número de cafés preparados cada día</a></p>
-	<p><a href="{% url 'energychart' device '20'%}">Energía consumida cada día</a></p>
-    <p><a href="{% url 'coffeecostchart' device  '20'%}">El coste energético de cada café por día</a></p>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            //var nCoffees = "{{ nCoffees|safe }}";
+            var arrayCoffees       = new Array();
+            var arrayEnergyYaxis   = new Array();
+            var arrayCoffeeCost    = new Array();
+            var arrayWastedenergy  = new Array();
+            google.load('visualization', '1.1', {'packages': ['bar']});
+            google.load("visualization", "1.1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var nGroupCoffees = google.visualization.arrayToDataTable([
+                      ['', ''],
+                      
+                      {% for docs in accEnergy %}
+                        ['{{docs.date}}',  {{docs.nGroupCoffees}}],
+                      {% endfor %}
+                ]);
+
+                var nUserCoffees = google.visualization.arrayToDataTable([
+                      ['', ''],
+                      
+                      {% for docs in accEnergy %}
+                        ['{{docs.date}}',  {{docs.nUserCoffees}}],
+                      {% endfor %}
+                ]);
+
+                var groupEnergy = new google.visualization.DataTable();
+                    groupEnergy.addColumn('string', '');
+                    groupEnergy.addColumn('number', '');
+                    groupEnergy.addColumn('number', '');
+                    groupEnergy.addRows([                
+                        {% for docs in accEnergy %}
+                            ['{{docs.date}}', parseInt('{{docs.groupEffectiveEnergy}}'), parseInt('{{docs.groupWastedEnergy}}')],
+                        {% endfor %}
+                ]);
+
+                var groupAndUserEnergy = new google.visualization.DataTable();
+                    groupAndUserEnergy.addColumn('string', '');
+                    groupAndUserEnergy.addColumn('number', '');
+                    groupAndUserEnergy.addColumn('number', '');
+                    groupAndUserEnergy.addColumn('number', '');
+                    groupAndUserEnergy.addColumn('number', '');
+                    groupAndUserEnergy.addRows([                
+                        {% for docs in accEnergy %}
+                           ['{{docs.date}}', parseInt('{{docs.groupEffectiveEnergy}}'), parseInt('{{docs.groupWastedEnergy}}') , parseInt('{{docs.userEffectiveEnergy}}'), parseInt('{{docs.userWastedEnergy}}')],
+                        {% endfor %}
+                ]);
+
+                var groupCoffeeCost = google.visualization.arrayToDataTable([
+                    ['', '', '', { role: 'annotation' } ],
+                    
+                    {% for docs in accEnergy %}
+                        ['{{docs.date}}', parseInt('{{docs.effectivePerCoffee}}'), parseInt('{{docs.average}}'), ''],
+                    {% endfor %}
+                ]);
+
+                var wastedData = new google.visualization.DataTable();
+                wastedData.addColumn('string', '');
+                wastedData.addColumn('number', '');
+                wastedData.addColumn('number', '');
+                wastedData.addColumn({type: 'string', role: 'tooltip'});
+                wastedData.addRows([
+                    {% for docs in accEnergy %}
+                        ['{{docs.date}}', parseInt('{{docs.userWastedEnergy}}'), parseInt('{{docs.groupWastedEnergy}}')-parseInt('{{docs.userWastedEnergy}}'), '' ],
+                    {% endfor %}
+                ]);
+
+
+                {% for docs in accEnergy %}
+                    arrayCoffees.push(parseInt('{{docs.nGroupCoffees}}'));
+                    arrayEnergyYaxis.push(parseInt('{{docs.groupEffectiveEnergy}}'));
+                    arrayCoffeeCost.push(parseInt('{{docs.effectivePerCoffee}}'));
+                    arrayWastedenergy.push(parseInt('{{docs.groupWastedEnergy}}'));
+                {% endfor %}
+
+                var maxDay          = Math.max.apply(Math, arrayCoffees);
+                var maxEnergy       = Math.max.apply(Math, arrayEnergyYaxis);
+                var maxCoffeeCost   = Math.max.apply(Math, arrayCoffeeCost);
+                var maxWastedenergy = Math.max.apply(Math, arrayWastedenergy); 
+
+                var optionsCoffee = {
+                  backgroundColor: "#EEEEEE",
+                  enableInteractivity: false,
+                  tooltip: {
+                        trigger: 'none',
+                        },
+                  bar: { groupWidth: '75%' },
+                  legend: {position: 'none'},
+                  vAxis: {
+                        viewWindow: {
+                            min: 0,
+                            max: maxDay + 3
+                        }, 
+                    },
+                };
+
+                var optionsEnergy = {
+                    legend: {position: 'none'},
+                    backgroundColor: "#EEEEEE",
+                    enableInteractivity: false,
+                    tooltip: {
+                        trigger: 'none'
+                    },
+                    bar: { groupWidth: '75%' },
+                    isStacked: true,
+                    vAxis: {
+                        viewWindow: {
+                            min: 0,
+                            max: maxEnergy + maxEnergy/2
+                        }, 
+                    },
+                };
+
+                var optionsGroupAndUserEnergy = {
+                    enableInteractivity: false,
+                    tooltip: {
+                        trigger: 'none',
+                        },
+                    isStacked: true,
+                    legend: {position: 'none'},
+                    bar: { groupWidth: '85%' },
+                    vAxis: {
+                        viewWindow: {
+                            min: 0,
+                            max: maxEnergy + maxEnergy/2
+                        },
+                    },
+                    series: {
+                        2: {
+                            targetAxisIndex: 1
+                        },
+                        3: {
+                            targetAxisIndex: 1
+                        }
+                    },
+                };
+
+                var optionsCoffeeCost = {
+                    enableInteractivity: false,
+                    tooltip: {
+                        trigger: 'none',
+                        },
+                    colors: ['#4285f4','#db4437'],
+                    backgroundColor: "#EEEEEE",
+                    legend: {position: 'none'},
+                    bar: { groupWidth: '85%' },
+                    height: 200,
+                    width: 280,
+                    isStacked: true,
+                    vAxis: {
+                        viewWindow: {
+                            min: 0,
+                            max: maxCoffeeCost + maxCoffeeCost/2
+                        }, 
+                    },
+                    seriesType: "bars",
+                    series: {1: {type: "line"}}
+                };
+
+                var optionsWastedEnergy = {
+                    enableInteractivity: false,
+                    tooltip: {
+                        trigger: 'none',
+                        isHtml: true
+                        },
+                    colors: ['#db4437', '#4285f4'],
+                    isStacked: true,
+                    legend: {position: 'none'},
+                    bar: { groupWidth: '85%' },
+                    vAxis: {
+                        viewWindow: {
+                            min: 0,
+                            max: maxWastedenergy + maxWastedenergy/2
+                        }
+                    },
+                    series: {
+                        2: {
+                            targetAxisIndex: 1
+                        },
+                        3: {
+                            targetAxisIndex: 1
+                        }
+                    },
+                };
+    
+            var chartGroupCoffee = new google.charts.Bar(document.getElementById('chart_div'));
+            chartGroupCoffee.draw(nGroupCoffees, google.charts.Bar.convertOptions(optionsCoffee));
+
+            var chartGroupEnergy = new google.charts.Bar(document.getElementById('chart_div_1'));
+            chartGroupEnergy.draw(groupEnergy, google.charts.Bar.convertOptions(optionsEnergy));
+
+            var chartCoffeeCost = new google.visualization.ComboChart(document.getElementById('chart_div_2'));
+            chartCoffeeCost.draw(groupCoffeeCost, google.charts.Bar.convertOptions(optionsCoffeeCost));
+
+            var chartUserCoffee = new google.charts.Bar(document.getElementById('chart_div_3'));
+            chartUserCoffee.draw(nUserCoffees, google.charts.Bar.convertOptions(optionsCoffee));
+
+            var chartGroupandUserEnergy = new google.charts.Bar(document.getElementById('chart_div_4'));
+            chartGroupandUserEnergy.draw(groupAndUserEnergy, google.charts.Bar.convertOptions(optionsGroupAndUserEnergy));
+
+            var chartGroupandUserAccEnergy = new google.charts.Bar(document.getElementById('chart_div_5'));
+            chartGroupandUserAccEnergy.draw(wastedData, google.charts.Bar.convertOptions(optionsWastedEnergy));
+            
+          }
+    </script>
+    <table>
+        <tr>
+            <td width="45%">
+                <ul style="list-style-type:none">
+                    <li>Consumo del grupo</li>
+                        <ul>
+                            <a href="{% url 'coffeeschart' device '20'%}">
+                                <li><b>Número de cafés preparados cada día por el grupo</b></li>
+                                <div id="chart_div" style="width: 250px; height: 150px; "></div>
+                            </a>
+                            <a href="{% url 'energychart' device '20'%}">
+                                <li><b>Energía total consumida por la cafetera día a día</b></li><div id="chart_div_1" style="width: 250px; height: 150px;" align="right"></div>
+                            </a>
+                            <a href="{% url 'coffeecostchart' device  '20'%}">
+                                <li><b>El coste energético de cada café preparado por día</b></li><div id="chart_div_2" style="width: 325px; height: 200px;" align="left"></div>
+                            </a>
+                        </ul>
+                </ul>
+            </td>
+            <td width="55%">
+                <ul style="list-style-type:none">
+                    <li><strong>Consumo personal</strong></li>
+                        <ul>
+                            <a href="{% url 'coffeesuserchart' device '20'%}">
+                                <li><b>Número de cafés preparados cada día por mi</b></li><div id="chart_div_3" style="width: 250px; height: 150px;" align="right"></div>
+                            </a>
+                            <a href="{% url 'energygroupandpersonalchart' device  '20'%}">
+                                <li><b>Comparativa del consumo energético personal con respecto al del grupo</b></li><div id="chart_div_4" style="width: 250px; height: 150px;" align="right"></div>
+                            </a>
+                            <a href="{% url 'accenergygroupandpersonalchart' device  '20'%}">
+                                <li><b>Proporción de energía desperdiciada por mi uso de la cafetera con respecto a la energía desperdiciada total del grupo</b><div id="chart_div_5" style="width: 250px; height: 150px;" align="right"></div></li>
+                            </a>
+                        </ul>
+                </ul>
+            
+            </td>
+        </tr>    
+    <table>
+    
 {% endblock %}
 {% block login %}
 	<br />
 	<hr />
 	<table width="100%">
     	<tr>
-            <td width="50%"><div align="left"><a href="{% url 'privatehome' %}">Volver</a></div></td>
-            <td width="50%"><div align="right"><a href="{% url 'closesession' %}">Cerrar sesión {{user.username|upper}}</a></div></td>
+            <td width="50%"><div align="left"><a href="{% url 'privatehome' %}"><h4>Panel principal</h4></a></div></td>
+            <td width="50%"><div align="right"><a href="{% url 'closesession' %}">Cerrar sesión <b>{{user.username|upper}}</b></a></div></td>
         </tr>
     </table>
 {% endblock %}

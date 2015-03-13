@@ -27,7 +27,8 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	list-style-type: circle;
+	font-weight: bold;
 }
 table {/* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
@@ -93,6 +94,13 @@ h3 {
 	padding-bottom: 12px;
 }
 
+h4 {
+	font-size: 24px;
+	font-family:"lobster 1.4";
+	color: #76c315;
+	padding-bottom: 18px;
+}
+
 div {
 	color: #777575;
 	font-family: arial;
@@ -122,6 +130,29 @@ a {
 
 .buttonLink:hover {
 	font-style:italic;
+}
+
+.styled-select select {
+   background: transparent;
+   width: 450px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 20px;
+   text-align: center;
+   font-family: Roboto2;
+   color: rgb(117, 117, 117);
+   -webkit-appearance: none;   
+   }
+
+ .styled-select {
+   width: 435px;
+   height: 22px;
+   margin: 0 auto;
+   overflow: hidden;
+   background: url(../images/down_arrow_select.jpg) no-repeat right #ddd;
+   border: 1px solid #ccc;
 }
 
 a:hover {

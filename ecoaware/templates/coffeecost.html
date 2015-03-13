@@ -1,62 +1,82 @@
 {% extends 'base.html' %}
 {% block title %}Ecoaware Everyday Things' Site{% endblock %}
 {% block javascript %}
-	<script src='js/jquery.js' type='text/javascript'></script>
-	<script src='js/funciones.js' type='text/javascript'></script>
+<link href='//fonts.googleapis.com/css?family=Roboto2:bold,regular,italic,thin,light,bolditalic,black,lang=en' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
-			//var accEnergy = "{{ accEnergy|safe }}";
-            //var energy = "{{ accEnergy }}";
-            var pagenum = location.pathname.match(/\/coffeecostchart\/(.*)/)[1];
-        	google.load("visualization", "1", {packages:["corechart"]});
+			google.load("visualization", "1", {packages:["corechart"]});
+            google.load('visualization', '1.1', {'packages': ['bar']});
             google.setOnLoadCallback(drawChart);
-			
+
+
+            var arrayCoffeeCost = new Array();
+            var groupName = "{{ device }}";
+            var pagenum = location.pathname.match(/\/coffeecostchart\/(.*)/)[1];
+            
             function drawChart() {
-				
-				  var data = google.visualization.arrayToDataTable([
-				['Fecha', 'Energía efectiva (Wh)', 'Energía desperdiciada (Wh)', { role: 'annotation' } ],
-				
-				{% for docs in accEnergy %}
-			
-					['{{docs.date}}', parseInt('{{docs.effectiveenergy}}'), parseInt('{{docs.wastedenergy}}'), ''],
-				{% endfor %}
+                
+                  var data = google.visualization.arrayToDataTable([
+                ['Fecha', 'Energía empleada para realizar una taza de café', 'La media de los últimos '+ pagenum + ' días', { role: 'annotation' } ],
+                
+                {% for docs in accEnergy %}
+            
+                    ['{{docs.date}}', parseInt('{{docs.effectiveenergy}}'), parseInt('{{docs.average}}'), ''],
+                {% endfor %}
               ]);
 
-			  var options = {
-				legend: { position: 'top', maxLines: 3 },
-				bar: { groupWidth: '75%' },
-				isStacked: true,
-				title: 'Energía consumida por una taza de café en los últimos' + pagenum + 'días',
-				vAxis: {title: 'Energía consimida por café en Wh'},
-			  };
+                {% for docs in accEnergy %}
+                    arrayCoffeeCost.push(parseInt('{{docs.effectiveenergy}}'));
+                {% endfor %}
+
+                var maxEnergy = Math.max.apply(Math, arrayCoffeeCost);
+                var options = {
+                    colors: ['#4285f4','#db4437'],
+                    backgroundColor: "#EEEEEE",
+                    legend: { position: 'top', maxLines: 3 },
+                    bar: { groupWidth: '85%' },
+                    isStacked: true,
+                    title: 'Energía media consumida por una taza de café en los últimos ' + pagenum + ' días en ' + groupName,
+                    vAxis: {
+                        viewWindow: {
+                            min: 0,
+                            max: maxEnergy + maxEnergy/4
+                        }, 
+                        title: 'Energía media consimida por café (Wh)'
+                    },
+                    seriesType: "bars",
+                    series: {1: {type: "line"}}
+                  };
     
-            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
           }
     </script>
 {% endblock %}
 {% block header %}Energía consumida{% endblock %}
 {% block content %}
 	<table border="0" width="100%">
-    	<tr >
-        	<td>
-                {% if superuser %}
-                <select name="days" onchange=location.href='./'+this.value>
-                {% else %}
-                <select name="days" onchange=location.href='./'+this.value>
-                {% endif %}
-                	<option value="5" disabled selected>Selecciona un rango de días</option> 
-                  	<option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                </select>
-            </td>
-        </tr>
         <tr>
         	<td>
             	<br />
                 <div id="chart_div" style="width: 940px; height: 550px;" align="center"></div>
+            </td>
+        </tr>
+        <tr align="center">
+            <td align="center">
+                <br />
+                <div class="styled-select">            
+                    {% if superuser %}
+                    <select name="days" onchange=location.href='./'+this.value style="cursor:pointer">
+                    {% else %}
+                    <select name="days" onchange=location.href='./'+this.value style="cursor:pointer">
+                    {% endif %}
+                        <option value="20" disabled selected>Selecciona un rango de días para visualizar consumos</option> 
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
             </td>
         </tr>
     </table>
@@ -65,10 +85,9 @@
 	<br />
 	<hr />
 	<table width="100%">
-    	<tr>
-        	
-            <td width="50%"><div align="left"><a href="{% url 'graphics' %}">Volver</a></div></td>
-            <td width="50%"><div align="right"><a href="{% url 'closesession' %}">Cerrar sesión {{user.username|upper}}</a></div></td>
+        <tr>
+            <td width="50%"><div align="left"><a href="{% url 'graphics' %}"><h4>Volver al menú GRÁFICAS</h4></a></div></td>
+            <td width="50%"><div align="right"><a href="{% url 'closesession' %}">Cerrar sesión <b>{{user.username|upper}}</b></a></div></td>
         </tr>
     </table>
 {% endblock %}

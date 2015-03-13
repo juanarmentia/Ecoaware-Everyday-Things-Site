@@ -3,59 +3,55 @@
 {% block javascript %}
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
-			//var accEnergy = "{{ accEnergy|safe }}";
-
-            var arrayEnergyYaxis = new Array();
-            var energy = "{{ accEnergy }}";
-            var groupName = "{{ device }}";
-            google.load('visualization', '1.1', {'packages': ['bar']});
+			//var nCoffees = "{{ nCoffees|safe }}";
+            var arrayCoffees = new Array()
+        	google.load('visualization', '1.1', {'packages': ['bar']});
             google.setOnLoadCallback(drawChart);
+            var pagenum = location.pathname.match(/\/coffeesuserchart\/(.*)/)[1];
 
-			
             function drawChart() {
-		        var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Fechas');
-                data.addColumn('number', 'Energía efectiva del grupo');
-                data.addColumn('number', 'Energía desperdiciada del grupo');
-                data.addRows([                
-                    {% for docs in accEnergy %}
-                
-                        ['{{docs.date}}', parseInt('{{docs.effectiveenergy}}'), parseInt('{{docs.wastedenergy}}')],
-                    {% endfor %}
+                var data = google.visualization.arrayToDataTable([
+    				  ['Fechas', 'Cafés preparados'],
+    				  {% for docs in accEnergy %}
+                        ['{{docs.date}}',  parseInt("{{docs.nUserCoffees}}")],
+                      {% endfor %}
                 ]);
+
                 {% for docs in accEnergy %}
-                    arrayEnergyYaxis.push(parseInt('{{docs.effectiveenergy}}'));
+                    arrayCoffees.push(parseInt("{{docs.nUserCoffees}}"));
                 {% endfor %}
-                var maxEnergy = Math.max.apply(Math, arrayEnergyYaxis);
-              var options = {
-                legend: { position: 'top', maxLines: 3 },
-                bar: { groupWidth: '75%' },
-                isStacked: true,
-                chart:{
-                    title: 'Desglose de la energía consumida en ' + groupName,
-                    subtitle: 'Energía efectiva       = Energía consumida haciendo café.\n Energía desperdiciada = Energía consumida por olvidar la cafetera encendida (standby).'
-                },
-                vAxis: {
-                    viewWindow: {
-                        min: 0,
-                        max: maxEnergy + maxEnergy/2
-                    }, 
-                    title: 'Energía consumida por la cafetera en Wh',                    
-                },
-              };
+
+                var maxDay = Math.max.apply(Math, arrayCoffees);
+
+                var options = {
+                  title: 'Número de cafés preparados en los últimos ' + pagenum + ' días',
+                  bar: { groupWidth: '75%' },
+                  legend: { position: 'top', maxLines: 3 },
+                  vAxis: {
+                        viewWindow: {
+                            min: 0,
+                            max: maxDay + 2
+                        }, 
+                        title: 'Número de cafés realizados'
+                    },
+                    gridlines: {
+                     count: 1,  //set kind of step (max-min)/count
+                    }
+                };
     
             var chart = new google.charts.Bar(document.getElementById('chart_div'));
             chart.draw(data, google.charts.Bar.convertOptions(options));
-          };
+          }
     </script>
 {% endblock %}
-{% block header %}Energía consumida{% endblock %}
+{% block header %}Número de cafés{% endblock %}
 {% block content %}
-	<table border="0" width="100%" align="center">
+	<table border="0" width="100%">
         <tr>
-        	<td>
+        	<td width="5%">
             	<br />
-                <div id="chart_div" style="width: 940px; height: 550px;" align="center"></div>
+                <div id="chart_div" style="width: 900px; height: 550px;" align="center">
+                </div>
             </td>
         </tr>
         <tr align="center">
@@ -77,6 +73,7 @@
             </td>
         </tr>
     </table>
+    
 {% endblock %}
 {% block login %}
 	<br />
